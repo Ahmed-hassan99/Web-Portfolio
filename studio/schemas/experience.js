@@ -1,11 +1,11 @@
 export default {
-  name: "post",
-  title: "Post",
+  name: "experience",
+  title: "Experience",
   type: "document",
   fields: [
     {
       name: "title",
-      title: "Title",
+      title: "Position Title",
       type: "string",
     },
     {
@@ -16,6 +16,10 @@ export default {
         source: "title",
         maxLength: 96,
       },
+    },
+    {
+      name: "place",
+      type: "string",
     },
     {
       name: "author",
@@ -32,13 +36,18 @@ export default {
       },
     },
     {
-      name: "publishedAt",
-      title: "Published at",
+      name: "startDate",
+      title: "Start Date",
       type: "datetime",
     },
     {
-      name: "body",
-      title: "Body",
+      name: "endDate",
+      title: "End Date",
+      type: "datetime",
+    },
+    {
+      name: "jobDescription",
+      title: "Job Description",
       type: "blockContent",
     },
   ],
