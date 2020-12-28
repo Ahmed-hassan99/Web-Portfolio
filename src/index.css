@@ -6,6 +6,21 @@
   font-family: "Arial";
   font-weight: 700;
 }
-.home-name {
-  font-size: 150px;
+.iconColor {
+  color: green;
+}
+
+.navShowBranding {
+  transform: translate3d(0, 0, 0);
+}
+.navHideBranding {
+  transform: translate3d(0, 100%, 0);
+}
+
+.blur {
+  backdrop-filter: blur(4px);
+}
+
+.portrait {
+  filter: grayscale();
 }

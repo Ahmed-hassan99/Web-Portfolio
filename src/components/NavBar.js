@@ -1,61 +1,83 @@
-import React from "react";
+import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
-import { SocialIcon } from "react-social-icons";
+import image from "../Assets/Headshott.jpg";
 
-export default function Navbar() {
-  return (
-    <header className="bg-indigo-700">
-      <div className="container mx-auto flex justify-between">
-        <nav className="flex">
-          <NavLink
-            to="/"
-            exact
-            activeClassName="text-white"
-            className="inflex-flex items-center py-6 px-3 mr-4 text-teal-100 nameFont hover:text-teal-400 text-4xl font-bold tracking-widest"
-          >
-            Ahmed Hassan
-          </NavLink>
-          <NavLink
-            to="/about"
-            activeClassName="text-white  bg-purple-900"
-            className="inline-flex items-center py-3 px-3 my-6 rounded text-teal-100 hover:text-teal-400 font-bold"
-          >
-            About
-          </NavLink>
-          <NavLink
-            to="/experience"
-            activeClassName="text-white  bg-purple-900"
-            className="inline-flex items-center py-3 px-3 my-6 rounded text-teal-100 hover:text-teal-400 font-bold"
-          >
-            Experiences
-          </NavLink>
-          <NavLink
-            to="/project"
-            activeClassName="text-white  bg-teal-900"
-            className="inline-flex items-center py-3 px-3 my-6 rounded text-teal-100 hover:text-teal-400 font-bold"
-          >
-            Projects
-          </NavLink>
-        </nav>
-        <div className="inline-flex  py-3 px-3 my-6">
-          <SocialIcon
-            url="https://github.com/Ahmed-hassan99"
-            className="mr-4"
-            target="_blank"
-            fgColor="#fff"
-            bgColor="#ffffff00"
-            style={{ height: 35, width: 35 }}
-          />
-          <SocialIcon
-            url="https://www.linkedin.com/in/ahmed-hassan-ca/"
-            className="mr-4"
-            target="_blank"
-            fgColor="#fff"
-            bgColor="#ffffff00"
-            style={{ height: 35, width: 35 }}
-          />
+class NavBar extends Component {
+  state = { clicked: false };
+  handleClick = () => {
+    this.setState({ clicked: !this.state.clicked });
+  };
+
+  render() {
+    return (
+      <header className="w-0 h-0">
+        <div
+          className="absolute top-10 right-10 cursor-pointer z-50"
+          onClick={this.handleClick}
+        >
+          <i
+            className={
+              this.state.clicked
+                ? "fas fa-times  text-white hover:text-gray-300"
+                : "fas fa-bars  text-white hover:text-gray-300"
+            }
+          ></i>
         </div>
-      </div>
-    </header>
-  );
+
+        <div
+          className={
+            this.state.clicked
+              ? "visible  mx-auto flex flex-col sm:flex-row justify-between justify-center fixed top-0 w-full h-full z-40  "
+              : "hidden"
+          }
+        >
+          <div className="flex inline-flex w-full justify-center items-center h-1/3 bg-gray-800 bg-opacity-75 sm:h-full sm:w-1/2 ">
+            <img
+              src={image}
+              className=" rounded-full w-48 h-48 lg:w-64 lg:h-64  border-solid border-teal-500 border-2 lg:border-4"
+              alt="Image of Ahmed Hassan"
+            />
+          </div>
+
+          <nav className="flex inline-flex justify-center items-center flex-col  sm:w-1/2 w-full sm:h-full h-2/3 bg-gray-900 opacity-90">
+            <NavLink
+              to="/"
+              exact
+              activeClassName="text-teal-400 "
+              className="inline-flex items-center transition-all  duration-500 py-3 px-3 my-6 rounded text-teal-100 hover:text-teal-400 font-bold text-3xl"
+              onClick={this.handleClick}
+            >
+              Home
+            </NavLink>
+            <NavLink
+              to="/about"
+              activeClassName="text-teal-400  "
+              className="inline-flex items-center transition-all  duration-500 py-3 px-3 my-6 rounded text-teal-100 hover:text-teal-400 font-bold text-3xl"
+              onClick={this.handleClick}
+            >
+              About Me
+            </NavLink>
+            <NavLink
+              to="/experience"
+              activeClassName="text-teal-400  "
+              className="inline-flex items-center transition-all  duration-500 py-3 px-3 my-6 rounded text-teal-100 hover:text-teal-400 font-bold text-3xl"
+              onClick={this.handleClick}
+            >
+              Experiences
+            </NavLink>
+            <NavLink
+              to="/project"
+              activeClassName="text-teal-400 "
+              className="inline-flex items-center transition-all  duration-500 py-3 px-3 my-6 rounded text-teal-100 hover:text-teal-400 font-bold text-3xl"
+              onClick={this.handleClick}
+            >
+              Projects
+            </NavLink>
+          </nav>
+        </div>
+      </header>
+    );
+  }
 }
+
+export default NavBar;

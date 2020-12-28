@@ -51,7 +51,18 @@ export default {
       type: "blockContent",
     },
   ],
-
+  orderings: [
+    {
+      title: "End Date, New",
+      name: "endDateDesc",
+      by: [{ field: "endDate", direction: "desc" }],
+    },
+    {
+      title: "End Date, Old",
+      name: "endDateAsc",
+      by: [{ field: "endDate", direction: "asc" }],
+    },
+  ],
   preview: {
     select: {
       title: "title",

@@ -40,25 +40,46 @@ export default function SingleExperience() {
       .catch(console.error);
   }, [slug]);
 
-  if (!singleExperience) return <div>Loading...</div>;
+  if (!singleExperience)
+    return (
+      <div className="relative min-h-screen bg-gray-800">
+        <div className="absolute inset-1/2 text-gray-100 text-xl">
+          Loading...
+        </div>
+      </div>
+    );
 
   return (
-    <main className=" bg-gray-200 min-h-screen p-12">
-      <article className="container shadow-lg mx-auto bg-green-100 rounded-lg">
+    <main className=" bg-gray-800 min-h-screen p-10 sm:p-12">
+      <article className="container shadow-lg mx-auto bg-teal-100 rounded-lg mt-10">
         <header className="relative">
           <div className="absolute h-full w-full flex items-center justify-center p-8">
-            <div className="bg-white bg-opacity-75 rounded p-12">
-              <h1 className="  text-3xl lg:text-6xl mb-4">
+            <div className="relative bg-white bg-opacity-75 blur rounded p-12">
+              <h1 className="  text-xl sm:text-2xl md:text-3xl lg:text-5xl mb-4 font-bold text-center ">
                 {singleExperience.title}
               </h1>
-              <div className="flex justify-center text-gray-800">
-                <img
-                  src={urlFor(singleExperience.authorImage).url()}
-                  alt={singleExperience.name}
-                  className="w-10 h-10 rounded-full"
-                />
-                <p className="nameFont flex items-center pl-2 text-2xl">
-                  {singleExperience.name}
+              <div className="flex justify-center text-gray-900 ">
+                <p className=" flex items-center pl-2 text-sm sm:text-lg md:text-xl lg:text-2xl">
+                  {singleExperience.place}
+                </p>
+              </div>
+              <div className="absolute bottom-0 right-0 text-gray-800">
+                <p className=" text-right p-2 text-xs sm:text-sm md:text-md lg:text-lg">
+                  {new Date(singleExperience.startDate).toLocaleDateString(
+                    undefined,
+                    {
+                      year: "numeric",
+                      month: "long",
+                    }
+                  )}
+                  {"-"}
+                  {new Date(singleExperience.endDate).toLocaleDateString(
+                    undefined,
+                    {
+                      year: "numeric",
+                      month: "long",
+                    }
+                  )}
                 </p>
               </div>
             </div>
