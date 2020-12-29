@@ -35,7 +35,7 @@ class NavBar extends Component {
             <img
               src={image}
               className=" rounded-full w-48 h-48 lg:w-64 lg:h-64  border-solid border-teal-500 border-2 lg:border-4"
-              alt="Image of Ahmed Hassan"
+              alt="Ahmed Hassan"
             />
           </div>
 
@@ -44,7 +44,7 @@ class NavBar extends Component {
               to="/"
               exact
               activeClassName="text-teal-400 "
-              className="inline-flex items-center transition-all  duration-500 py-3 px-3 my-6 rounded text-teal-100 hover:text-teal-400 font-bold text-3xl"
+              className="inline-flex items-center transition-all  duration-500 py-3 px-3 my-4 rounded text-teal-100 hover:text-teal-400 font-bold text-2xl"
               onClick={this.handleClick}
             >
               Home
@@ -52,7 +52,7 @@ class NavBar extends Component {
             <NavLink
               to="/about"
               activeClassName="text-teal-400  "
-              className="inline-flex items-center transition-all  duration-500 py-3 px-3 my-6 rounded text-teal-100 hover:text-teal-400 font-bold text-3xl"
+              className="inline-flex items-center transition-all  duration-500 py-3 px-3 my-4 rounded text-teal-100 hover:text-teal-400 font-bold text-2xl"
               onClick={this.handleClick}
             >
               About Me
@@ -60,7 +60,7 @@ class NavBar extends Component {
             <NavLink
               to="/experience"
               activeClassName="text-teal-400  "
-              className="inline-flex items-center transition-all  duration-500 py-3 px-3 my-6 rounded text-teal-100 hover:text-teal-400 font-bold text-3xl"
+              className="inline-flex items-center transition-all  duration-500 py-3 px-3 my-4 rounded text-teal-100 hover:text-teal-400 font-bold text-2xl"
               onClick={this.handleClick}
             >
               Experiences
@@ -68,7 +68,7 @@ class NavBar extends Component {
             <NavLink
               to="/project"
               activeClassName="text-teal-400 "
-              className="inline-flex items-center transition-all  duration-500 py-3 px-3 my-6 rounded text-teal-100 hover:text-teal-400 font-bold text-3xl"
+              className="inline-flex items-center transition-all  duration-500 py-3 px-3 my-4 rounded text-teal-100 hover:text-teal-400 font-bold text-2xl"
               onClick={this.handleClick}
             >
               Projects

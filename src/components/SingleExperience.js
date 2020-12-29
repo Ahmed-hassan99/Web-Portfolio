@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import sanityClient from "../client.js";
 import imageUrlBuilder from "@sanity/image-url";
-
+import { NavLink } from "react-router-dom";
 import BlockContent from "@sanity/block-content-to-react";
 
 const builder = imageUrlBuilder(sanityClient);
@@ -42,7 +42,7 @@ export default function SingleExperience() {
 
   if (!singleExperience)
     return (
-      <div className="relative min-h-screen bg-gray-800">
+      <div className="relative min-h-screen bg-gray-900 bg-opacity-90">
         <div className="absolute inset-1/2 text-gray-100 text-xl">
           Loading...
         </div>
@@ -50,7 +50,12 @@ export default function SingleExperience() {
     );
 
   return (
-    <main className=" bg-gray-800 min-h-screen p-10 sm:p-12">
+    <main className=" bg-gray-900 bg-opacity-90 min-h-screen p-10 sm:p-12 relative">
+      <div className="absolute top-10 left-10 cursor-pointer z-50">
+        <NavLink to="/experience">
+          <i className="fas fa-chevron-left  text-white hover:text-gray-300"></i>
+        </NavLink>
+      </div>
       <article className="container shadow-lg mx-auto bg-teal-100 rounded-lg mt-10">
         <header className="relative">
           <div className="absolute h-full w-full flex items-center justify-center p-8">

@@ -28,7 +28,7 @@ export default function About() {
 
   if (!author)
     return (
-      <div className="relative min-h-screen bg-gray-800">
+      <div className="relative min-h-screen bg-gray-900 bg-opacity-90">
         <div className="absolute inset-1/2 text-gray-100 text-xl">
           Loading...
         </div>
@@ -40,14 +40,15 @@ export default function About() {
       <img
         src={image}
         alt="Abstract Biomedical Engineering"
-        className="absolute object-cover  w-full max-h-screen"
+        className="absolute object-cover  w-full min-h-screen"
       />
+      <div className="fixed bg-gray-800 bg-opacity-50 h-full w-full fixed top-0 z-0"></div>
       <div className="p-5 pt-20 lg:p-10 lg:pt-48  container mx-auto relative">
         <section className="bg-gray-900 rounded-lg shadow-2xl flex flex-col md:flex-row p-4 sm:p-6 md:p-8 lg:p-10">
           <div className="flex inline-flex justify-center m-5 ">
             <img
               src={urlFor(author.authorImage).url()}
-              className=" rounded-full w-32 h-32  sm:w-48 sm:h-48 lg:w-64 lg:h-64 border-solid border-teal-500 border-4 lg:border-6"
+              className=" rounded w-32 h-32  sm:w-48 sm:h-48 lg:w-64 lg:h-64 border-solid border-teal-500 border-2 "
               alt={author.name}
             />
           </div>

@@ -20,7 +20,7 @@ export default function Project() {
         <h2 className=" text-md sm:text-lg text-gray-400 flex justify-center lg:justify-start mb-12 italic">
           Welcome to my projects page!
         </h2>
-        <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <section className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
           {projectData &&
             projectData.map((project, index) => (
               <article className="relative rounded-lg shadow-xl bg-teal-100 bg-opacity-90 p-8 sm:p-16">

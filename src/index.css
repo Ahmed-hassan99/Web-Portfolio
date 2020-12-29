@@ -2,25 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
-.nameFont {
-  font-family: "Arial";
-  font-weight: 700;
-}
-.iconColor {
-  color: green;
-}
+@import url("https://fonts.googleapis.com/css2?family=Aladin&display=swap");
 
-.navShowBranding {
-  transform: translate3d(0, 0, 0);
-}
-.navHideBranding {
-  transform: translate3d(0, 100%, 0);
+.nameFont {
+  font-family: "Aladin", cursive;
+  font-weight: 700;
+  letter-spacing: 0.05em;
 }
 
 .blur {
   backdrop-filter: blur(4px);
-}
-
-.portrait {
-  filter: grayscale();
 }
