@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
 import image from "../Assets/Headshott.jpg";
-import { Spring, Transition, animated } from "react-spring/renderprops";
+import { Transition, animated } from "react-spring/renderprops";
 
 class NavBar extends Component {
   state = { clicked: false };
