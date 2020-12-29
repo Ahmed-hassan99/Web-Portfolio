@@ -2,8 +2,20 @@ import React from "react";
 import image from "../Assets/Biomedical-Eng-background1.jpg";
 import resume from "../Assets/Resume.pdf";
 import { SocialIcon } from "react-social-icons";
+import { useSpring, animated } from "react-spring";
 
 export default function Home() {
+  const h1Animate = useSpring({
+    from: { opacity: 0, marginTop: -300 },
+    to: { opacity: 1, marginTop: 0 },
+    config: { delay: 0, duration: 500 },
+  });
+  const iconAnimate = useSpring({
+    from: { opacity: 0, marginTop: -100 },
+    to: { opacity: 1, marginTop: 0 },
+    config: { delay: 500, duration: 500 },
+  });
+
   return (
     <main>
       <img
@@ -12,8 +24,12 @@ export default function Home() {
         className="absolute object-cover w-full h-full"
       />
       <div className="fixed bg-gray-800 bg-opacity-80 h-full w-full fixed top-0 z-0"></div>
+
       <div className="container absolute inset-y-1/4 ">
-        <section className="relative flex flex-col px-8">
+        <animated.section
+          className="relative flex flex-col px-8 "
+          style={h1Animate}
+        >
           <h1 className="transition-all  duration-500 inline-flex justify-center md:justify-start text-4xl sm:text-6xl md:text-7xl sm:pt-30 lg:text-8xl text-gray-300 font-bold nameFont leading-none lg:leading-snug  z-30">
             Ahmed
             <strong className="text-teal-500 font-bold pl-2">Hassan</strong>
@@ -21,9 +37,12 @@ export default function Home() {
           <h2 className="transition-all  duration-500 inline-flex justify-center text-center md:text-left md:justify-start p-1 text-lg bg-gray-900 bg-opacity-30  md:text-xl sm:pt-30 lg:text-2xl text-gray-200  opacity-75 leading-none lg:leading-snug mt-4 z-30">
             Engineer, Web developer, Designer, Programmer
           </h2>
-        </section>
+        </animated.section>
         <section className="relative flex px-4">
-          <div className="transition-all  duration-500 inline-flex mx-auto md:mx-0 py-3 px-3 my-2">
+          <animated.div
+            style={iconAnimate}
+            className=" inline-flex mx-auto md:mx-0 py-3 px-4 my-2"
+          >
             <SocialIcon
               url="https://github.com/Ahmed-hassan99"
               className="mr-4 rounded-full  transition-all  duration-500 hover:bg-teal-500"
@@ -32,6 +51,7 @@ export default function Home() {
               bgColor="#ffffff00"
               style={{ height: 50, width: 50 }}
             />
+
             <SocialIcon
               url="https://www.linkedin.com/in/ahmed-hassan-ca/"
               className="mr-4  rounded-full  transition-all  duration-500 hover:bg-teal-500"
@@ -40,6 +60,7 @@ export default function Home() {
               bgColor="#ffffff00"
               style={{ height: 50, width: 50 }}
             />
+
             <SocialIcon
               url="https://twitter.com/Ahmeddodo99_"
               className="mr-4  rounded-full  transition-all  duration-500 hover:bg-teal-500"
@@ -48,7 +69,7 @@ export default function Home() {
               bgColor="#ffffff00"
               style={{ height: 50, width: 50 }}
             />
-          </div>
+          </animated.div>
         </section>
         <section className="transition-all  duration-500 relative text-lg sm:text-2xl flex px-8 text-gray-300 flex-col md:flex-row  leading-none lg:leading-snug">
           <a

@@ -23,7 +23,7 @@ export default function Experience() {
           Welcome to my page of professional Experiences!
         </h2>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {experienceData &&
             experienceData
               .slice(0)
@@ -35,7 +35,7 @@ export default function Experience() {
                     key={experience.slug.current}
                   >
                     <span
-                      className="  block h-64 relative rounded shadow-xl leading-snug bg-white border-l-8 border-teal-400"
+                      className="hover:shadow-2xl block h-64 relative rounded shadow-xl leading-snug bg-white border-l-8 border-teal-400  transition-all duration-500 "
                       key={index}
                     >
                       <img
