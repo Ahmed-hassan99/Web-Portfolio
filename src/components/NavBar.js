@@ -18,8 +18,8 @@ class NavBar extends Component {
           <i
             className={
               this.state.clicked
-                ? "fas fa-times  text-white hover:text-gray-300"
-                : "fas fa-bars  text-white hover:text-gray-300"
+                ? "fas fa-times  text-teal-500 hover:text-gray-300"
+                : "fas fa-bars  text-teal-500 hover:text-gray-300"
             }
           ></i>
         </div>
