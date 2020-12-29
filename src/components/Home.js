@@ -52,7 +52,7 @@ export default function Home() {
         </section>
         <section className="transition-all  duration-500 relative text-lg sm:text-2xl flex px-8 text-gray-300 flex-col md:flex-row  leading-none lg:leading-snug">
           <a
-            className=" transition-all  duration-500 justify-center font-bold  rounded flex inline-flex mx-auto md:mx-2 py-3 px-3 my-2 border-solid border-2 hover:border-teal-500 hover:text-teal-500 hover:bg-teal-500 hover:bg-opacity-20"
+            className=" transition-all  duration-500 justify-center font-bold  rounded flex inline-flex mx-auto md:mx-2 py-3 px-3 my-2 border-solid border-2 border-teal-500 hover:text-teal-500 hover:bg-teal-500 hover:bg-opacity-20"
             href="mailto:ahmed99dodo1999@gmail.com"
             target="_blank"
             rel="noopener noreferrer"
@@ -61,7 +61,7 @@ export default function Home() {
           </a>
 
           <a
-            className="transition-all  duration-500 justify-center font-bold  rounded flex inline-flex mx-auto md:mx-2 py-3 px-3 my-2 border-solid border-2 hover:border-teal-500 hover:text-teal-500 hover:bg-teal-500 hover:bg-opacity-20"
+            className="transition-all  duration-500 justify-center font-bold  rounded flex inline-flex mx-auto md:mx-2 py-3 px-3 my-2 border-solid border-2 border-teal-500 hover:text-teal-500 hover:bg-teal-500 hover:bg-opacity-20"
             href={resume}
             target="_blank"
             rel="noopener noreferrer"
