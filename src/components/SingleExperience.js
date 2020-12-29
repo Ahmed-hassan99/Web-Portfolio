@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import sanityClient from "../client.js";
-import imageUrlBuilder from "@sanity/image-url";
+// import imageUrlBuilder from "@sanity/image-url";
 import { NavLink } from "react-router-dom";
 import BlockContent from "@sanity/block-content-to-react";
 
-const builder = imageUrlBuilder(sanityClient);
-function urlFor(source) {
-  return builder.image(source);
-}
+// const builder = imageUrlBuilder(sanityClient);
+// function urlFor(source) {
+//   return builder.image(source);
+// }
 
 export default function SingleExperience() {
   const [singleExperience, setSingleExperience] = useState(null);
