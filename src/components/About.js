@@ -36,11 +36,11 @@ export default function About() {
     );
 
   return (
-    <main className="relative">
+    <main>
       <img
         src={image}
         alt="Abstract Biomedical Engineering"
-        className="absolute object-cover  w-full min-h-screen"
+        className="absolute object-cover w-full h-full"
       />
       <div className="fixed bg-gray-800 bg-opacity-50 h-full w-full fixed top-0 z-0"></div>
       <div className="p-5 pt-20 lg:p-10 lg:pt-48  container mx-auto relative">
