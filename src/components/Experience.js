@@ -12,14 +12,15 @@ export default function Experience() {
       .then((data) => setExperience(data))
       .catch(console.error);
   }, []);
+
   return (
-    <main className=" bg-gray-900 bg-opacity-90 min-h-screen p-12">
+    <main className=" bg-gray-900 bg-opacity-90 min-h-screen p-10">
       <section className="container relative  mx-auto mt-10">
-        <h1 className="text-2xl sm:text-5xl flex justify-center lg:justify-start nameFont text-teal-100 mb-5">
+        <h1 className="text-3xl sm:text-5xl flex justify-center lg:justify-start nameFont text-teal-100 mb-5">
           Experience
           <strong className="pl-2 text-teal-500 font-bold"> & Education</strong>
         </h1>
-        <h2 className=" text-md text-center sm:text-lg text-gray-400 flex justify-center lg:justify-start mb-12 italic ">
+        <h2 className=" text-md text-center sm:text-lg text-gray-400 flex justify-center lg:justify-start mb-6 sm:mb-12 italic ">
           Welcome to my page of professional Experiences!
         </h2>
 

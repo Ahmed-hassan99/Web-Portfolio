@@ -13,14 +13,14 @@ class NavBar extends Component {
     return (
       <header className="w-0 h-0">
         <div
-          className="absolute top-10 right-10 cursor-pointer z-50"
+          className="absolute top-5 right-5 cursor-pointer z-50 "
           onClick={this.handleClick}
         >
           <i
             className={
               this.state.clicked
-                ? "fas fa-times  text-gray-100 hover:text-gray-300"
-                : "fas fa-bars  text-gray-100 hover:text-gray-300"
+                ? "fas fa-times text-xl text-gray-100 hover:text-gray-300"
+                : "fas fa-bars text-xl text-gray-100 hover:text-gray-300"
             }
           ></i>
         </div>
