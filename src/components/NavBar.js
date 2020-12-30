@@ -20,6 +20,7 @@ class NavBar extends Component {
           <NavLink to="/" exact>
             <img
               src={logo}
+              alt="logo"
               className="h-7 w-7 ml-10 mt-3 float-left transition-all duration-500 hover:opacity-100 opacity-50 rounded"
             />
           </NavLink>
