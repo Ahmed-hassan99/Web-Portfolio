@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import sanityClient from "../client.js";
+import Badge from "react-bootstrap/Badge";
 
 export default function Project() {
   const [projectData, setProjectData] = useState(null);
@@ -23,7 +24,7 @@ export default function Project() {
         <section className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
           {projectData &&
             projectData.map((project, index) => (
-              <article className="relative rounded-lg shadow-xl bg-teal-100 bg-opacity-90 p-8 sm:p-16">
+              <article className="relative rounded-lg shadow-xl bg-teal-100 bg-opacity-90 p-8 sm:p-12">
                 <h3 className="text-gray-800 text-2xl sm:text-3xl font-bold mb-2 transition-all duration-500 hover:text-teal-700">
                   <a
                     href={project.link}
@@ -34,7 +35,8 @@ export default function Project() {
                     {project.title}
                   </a>
                 </h3>
-                <div className="text-gray-600 text-xs space-x-4">
+
+                <div className="text-gray-600 text-xs">
                   <span>
                     <strong className="font-bold"> Finished on</strong>:{"  "}
                     {new Date(project.date).toLocaleDateString()}
@@ -47,24 +49,32 @@ export default function Project() {
                     <strong className="font-bold"> Type</strong>:{"  "}
                     {project.projectType}
                   </span>
+
+                  <div>
+                    {project.tags.map((tags) => (
+                      <Badge className=" mr-1" variant="dark">
+                        {tags}
+                      </Badge>
+                    ))}
+                  </div>
                   <p className="my-3 text-md sm:text-lg text-gray-800 leading-relaxed">
                     {project.description}
                   </p>
-                  {project.tags.map((tags) => (
-                    <p>{tags}</p>
-                  ))}
-                  <a
-                    href={project.link}
-                    alt={project.title}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-red-500 font-bold hover:underline hover:text-teal-700 transition-all duration-500"
-                  >
-                    View The Project{"  "}
-                    <span role="img" aria-label="right pointer">
-                      👉
-                    </span>
-                  </a>
+
+                  <div>
+                    <a
+                      href={project.link}
+                      alt={project.title}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-red-500 font-bold hover:underline hover:text-teal-700 transition-all duration-500"
+                    >
+                      View The Project{"  "}
+                      <span role="img" aria-label="right pointer">
+                        👉
+                      </span>
+                    </a>
+                  </div>
                 </div>
               </article>
             ))}

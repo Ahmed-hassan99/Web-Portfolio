@@ -22,7 +22,7 @@ export default function Home() {
 
       <animated.div
         style={Animate}
-        className=" absolute inset-y-1/4 inset-x-0 mx-auto z-10"
+        className=" absolute inset-y-1/4 inset-x-0 "
       >
         <section className="relative flex flex-col px-8  justify-cener md:justify-start">
           <h1 className="transition-all  duration-500 inline-flex justify-center md:justify-start  text-4xl sm:text-6xl md:text-7xl sm:pt-30 lg:text-8xl text-gray-300 font-bold nameFont leading-none lg:leading-snug  z-30">

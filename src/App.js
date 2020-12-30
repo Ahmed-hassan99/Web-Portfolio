@@ -5,6 +5,7 @@ import Project from "./components/Project";
 import Experience from "./components/Experience";
 import SingleExperience from "./components/SingleExperience";
 import Navbar from "./components/NavBar";
+import "bootstrap/dist/css/bootstrap.badge.css";
 
 function App() {
   return (
