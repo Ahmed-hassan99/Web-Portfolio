@@ -14,7 +14,7 @@ export default function Experience() {
   }, []);
 
   return (
-    <main className=" bg-gray-900 bg-opacity-90 min-h-screen p-10">
+    <main className=" bg-gray-900 bg-opacity-95 min-h-screen p-10">
       <section className="container relative  mx-auto mt-10">
         <h1 className="text-3xl sm:text-5xl flex justify-center lg:justify-start nameFont text-teal-100 mb-5">
           Experience

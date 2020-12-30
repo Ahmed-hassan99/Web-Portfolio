@@ -92,12 +92,12 @@ export default function SingleExperience() {
           <img
             src={singleExperience.mainImage.asset.url}
             alt={singleExperience.title}
-            className="w-full object-cover rounded-t"
-            style={{ height: "400px" }}
+            className="w-full object-cover rounded-t mainImagesm md:mainImage"
+            // style={{ height: "400px" }}
           />
         </header>
 
-        <div className="px-6 md:px-16 lg:px-48 py-4 md:py-12  lg:py-20 prose lg:prose-xl max-w-full">
+        <div className="px-6 md:px-16 lg:px-48 py-4 md:py-12  lg:py-20 prose-sm lg:prose-xl max-w-full">
           <BlockContent
             blocks={singleExperience.jobDescription}
             projectId="0rdpl6dw"

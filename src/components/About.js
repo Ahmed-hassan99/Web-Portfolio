@@ -53,7 +53,7 @@ export default function About() {
             />
           </div>
           <div className="text-lg inline-flex flex-col justify-center ">
-            <h1 className="nameFont text-lg sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl text-teal-100 mb-2 lg:mb-4 ">
+            <h1 className="nameFont text-center text-lg sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl text-teal-100 mb-2 lg:mb-4 ">
               {" "}
               Hey there. I'm{" "}
               <span className="text-teal-400">{author.name}</span>

@@ -12,8 +12,8 @@ export default function Project() {
       .catch(console.error);
   }, []);
   return (
-    <main className="bg-gray-900 bg-opacity-90 min-h-screen p-12">
-      <section className="container mx-auto">
+    <main className="bg-gray-900 bg-opacity-95 min-h-screen p-12">
+      <section className="container mx-aut mt-10">
         <h1 className="text-2xl sm:text-5xl flex justify-center lg:justify-start nameFont text-teal-100 mb-5">
           My <strong className="pl-2 text-teal-500 font-bold">Projects</strong>
         </h1>
@@ -50,6 +50,9 @@ export default function Project() {
                   <p className="my-3 text-md sm:text-lg text-gray-800 leading-relaxed">
                     {project.description}
                   </p>
+                  {project.tags.map((tags) => (
+                    <p>{tags}</p>
+                  ))}
                   <a
                     href={project.link}
                     alt={project.title}

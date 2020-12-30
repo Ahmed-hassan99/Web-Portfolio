@@ -12,3 +12,11 @@
 .blur {
   backdrop-filter: blur(4px);
 }
+
+.mainImage {
+  height: 400px;
+}
+
+.mainImagesm {
+  height: 250px;
+}
