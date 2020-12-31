@@ -2,9 +2,10 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import sanityClient from "../client.js";
 // import imageUrlBuilder from "@sanity/image-url";
-import { NavLink } from "react-router-dom";
+// import { NavLink } from "react-router-dom";
 import BlockContent from "@sanity/block-content-to-react";
 
+import Fade from "react-reveal/Fade";
 // const builder = imageUrlBuilder(sanityClient);
 // function urlFor(source) {
 //   return builder.image(source);
@@ -50,61 +51,87 @@ export default function SingleExperience() {
     );
 
   return (
-    <main className=" bg-gray-900 bg-opacity-90 min-h-screen p-5 pt-5 sm:p-10 sm:p-12 relative">
-      <div className="absolute top-5 left-5 cursor-pointer z-50">
-        <NavLink to="/experience">
-          <i className="fas fa-chevron-left text-xl text-white hover:text-gray-300"></i>
-        </NavLink>
-      </div>
-      <article className=" container shadow-lg mx-auto bg-teal-100 rounded-lg mt-10">
-        <header className="relative">
-          <div className="absolute h-full w-full flex items-center justify-center p-8">
-            <div className="relative bg-white bg-opacity-75 blur rounded p-6 md:p-12">
-              <h1 className="  text-xl sm:text-2xl md:text-3xl lg:text-5xl mb-4 font-bold text-center ">
-                {singleExperience.title}
-              </h1>
-              <div className="flex justify-center text-gray-900 ">
-                <p className=" flex items-center pl-2 pb-2 text-sm sm:text-lg md:text-xl lg:text-2xl">
-                  {singleExperience.place}
-                </p>
-              </div>
-              <div className="absolute bottom-0 right-0 text-gray-800">
-                <p className=" text-right p-2 text-xs sm:text-sm md:text-md lg:text-lg">
-                  {new Date(singleExperience.startDate).toLocaleDateString(
-                    undefined,
-                    {
-                      year: "numeric",
-                      month: "long",
-                    }
-                  )}
-                  {"-"}
-                  {new Date(singleExperience.endDate).toLocaleDateString(
-                    undefined,
-                    {
-                      year: "numeric",
-                      month: "long",
-                    }
-                  )}
-                </p>
-              </div>
-            </div>
-          </div>
-          <img
-            src={singleExperience.mainImage.asset.url}
-            alt={singleExperience.title}
-            className="w-full object-cover rounded-t mainImagesm md:mainImage"
-            // style={{ height: "400px" }}
-          />
-        </header>
-
-        <div className="px-6 md:px-16 lg:px-48 py-4 md:py-12  lg:py-20 prose-sm lg:prose-xl max-w-full">
+    <div className=" md:m-0 md:ml-10 mt-5">
+      <Fade>
+        <h1 className=" text-lg text-teal-400 font-bold p-1">
+          {singleExperience.title}
+        </h1>
+        <h2 className="text-md text-gray-500  italic p-1">
+          {new Date(singleExperience.startDate).toLocaleDateString(undefined, {
+            year: "numeric",
+            month: "long",
+          })}
+          {" - "}
+          {new Date(singleExperience.endDate).toLocaleDateString(undefined, {
+            year: "numeric",
+            month: "long",
+          })}
+        </h2>
+        <div className="text-gray-200 prose-sm lg:prose-lg max-w-full p-1 ">
           <BlockContent
             blocks={singleExperience.jobDescription}
             projectId="0rdpl6dw"
             dataset="production"
           />
         </div>
-      </article>
-    </main>
+      </Fade>
+    </div>
+
+    // <main className=" bg-gray-900 bg-opacity-90 min-h-screen p-5 pt-5 sm:p-10 sm:p-12 relative">
+    //   <div className="absolute top-5 left-5 cursor-pointer z-50">
+    //     <NavLink to="/experience">
+    //       <i className="fas fa-chevron-left text-xl text-white hover:text-gray-300"></i>
+    //     </NavLink>
+    //   </div>
+    //   <article className=" container shadow-lg mx-auto bg-teal-100 rounded-lg mt-10">
+    //     <header className="relative">
+    //       <div className="absolute h-full w-full flex items-center justify-center p-8">
+    //         <div className="relative bg-white bg-opacity-75 blur rounded p-6 md:p-12">
+    //           <h1 className="  text-xl sm:text-2xl md:text-3xl lg:text-5xl mb-4 font-bold text-center ">
+    //             {singleExperience.title}
+    //           </h1>
+    //           <div className="flex justify-center text-gray-900 ">
+    //             <p className=" flex items-center pl-2 pb-2 text-sm sm:text-lg md:text-xl lg:text-2xl">
+    //               {singleExperience.place}
+    //             </p>
+    //           </div>
+    //           <div className="absolute bottom-0 right-0 text-gray-800">
+    //             <p className=" text-right p-2 text-xs sm:text-sm md:text-md lg:text-lg">
+    //               {new Date(singleExperience.startDate).toLocaleDateString(
+    //                 undefined,
+    //                 {
+    //                   year: "numeric",
+    //                   month: "long",
+    //                 }
+    //               )}
+    //               {"-"}
+    //               {new Date(singleExperience.endDate).toLocaleDateString(
+    //                 undefined,
+    //                 {
+    //                   year: "numeric",
+    //                   month: "long",
+    //                 }
+    //               )}
+    //             </p>
+    //           </div>
+    //         </div>
+    //       </div>
+    //       <img
+    //         src={singleExperience.mainImage.asset.url}
+    //         alt={singleExperience.title}
+    //         className="w-full object-cover rounded-t mainImagesm md:mainImage"
+    //         // style={{ height: "400px" }}
+    //       />
+    //     </header>
+
+    //     <div className="px-6 md:px-16 lg:px-48 py-4 md:py-12  lg:py-20 prose-sm lg:prose-xl max-w-full">
+    //       <BlockContent
+    //         blocks={singleExperience.jobDescription}
+    //         projectId="0rdpl6dw"
+    //         dataset="production"
+    //       />
+    //     </div>
+    //   </article>
+    // </main>
   );
 }

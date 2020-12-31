@@ -10,7 +10,11 @@
 }
 
 .blur {
-  backdrop-filter: blur(4px);
+  backdrop-filter: blur(6px);
+}
+
+.blur2 {
+  backdrop-filter: blur(10px);
 }
 
 .mainImage {
@@ -19,4 +23,8 @@
 
 .mainImagesm {
   height: 250px;
+}
+
+a[href="#"] {
+  display: none;
 }
