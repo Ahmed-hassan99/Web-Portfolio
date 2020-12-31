@@ -11,6 +11,16 @@ import Fade from "react-reveal/Fade";
 //   return builder.image(source);
 // }
 
+const serializers = {
+  types: {
+    code: (props) => (
+      <pre data-language={props.node.language}>
+        <code>{props.node.code}</code>
+      </pre>
+    ),
+  },
+};
+
 export default function SingleExperience() {
   const [singleExperience, setSingleExperience] = useState(null);
 
@@ -72,6 +82,7 @@ export default function SingleExperience() {
             blocks={singleExperience.jobDescription}
             projectId="0rdpl6dw"
             dataset="production"
+            serializers={serializers}
           />
         </div>
       </Fade>

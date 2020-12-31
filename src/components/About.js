@@ -39,7 +39,7 @@ export default function About() {
   return (
     <main className=" relative bg-gray-900 blur2">
       <div className="p-5  lg:p-10  container mx-auto relative">
-        <Fade top cascade>
+        <Fade>
           <h1 className="text-3xl sm:text-5xl flex justify-center lg:justify-start nameFont text-teal-100 mb-5">
             About
             <strong className="pl-2 text-teal-500 font-bold"> Me</strong>
