@@ -1,19 +1,9 @@
-import React, { useState, useEffect } from "react";
-import sanityClient from "../client.js";
+import React from "react";
 import Fade from "react-reveal/Fade";
 
-export default function Project() {
-  const [projectData, setProjectData] = useState(null);
-  useEffect(() => {
-    sanityClient
-      .fetch(
-        `*[_type == "project"]{ title, date, place, description, projectType, link, tags}`
-      )
-      .then((data) => setProjectData(data))
-      .catch(console.error);
-  }, []);
+const Project = (props) => {
   return (
-    <main className="bg-gray-900 bg-opacity-100 min-h-screen ">
+    <main className="bg-gray-900 bg-opacity-100 min-h-screen blur2">
       <section className="container mx-auto p-5 lg:p-10">
         <section className="container mx-auto">
           <Fade>
@@ -27,8 +17,8 @@ export default function Project() {
           </h2>
           <Fade top cascade>
             <section className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
-              {projectData &&
-                projectData.map((project, index) => (
+              {props.projectData &&
+                props.projectData.map((project, index) => (
                   <article className="relative h-80 rounded-lg shadow-xl bg-blue-900 bg-opacity-30 p-8 sm:p-12 ">
                     <h3 className="text-gray-100 text-2xl sm:text-3xl font-bold mb-2 transition-all duration-500 hover:text-teal-700 ">
                       {project.title}
@@ -65,4 +55,5 @@ export default function Project() {
       </section>
     </main>
   );
-}
+};
+export default Project;

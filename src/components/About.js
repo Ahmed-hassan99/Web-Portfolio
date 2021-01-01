@@ -18,7 +18,8 @@ export default function About() {
     sanityClient
       .fetch(
         `*[_type == "author"]{
-                name, degree,
+                name, 
+                degree,
                 bio,
                 "authorImage": image.asset->url
             }`

@@ -1,9 +1,11 @@
 import React, { Component } from "react";
+// react  reveal and scroll
+import Slide from "react-reveal/Slide";
+import { Link } from "react-scroll";
+//import images and pdf
+import resume from "../Assets/Resume.pdf";
 import image from "../Assets/Headshott.jpg";
 import logo from "../Assets/AH-logo.png";
-import { Transition, animated } from "react-spring/renderprops";
-import { Link } from "react-scroll";
-import resume from "../Assets/Resume.pdf";
 
 const navButton =
   "inline-flex items-center cursor-pointer justify-center transition-all w-full duration-500 py-3 px-3 my-4 rounded text-teal-100 hover:text-teal-400 font-bold text-xl";
@@ -13,7 +15,7 @@ class NavBar extends Component {
   state = {
     auth: false,
     slide: 0, // How much should the Navbar slide up or down
-    initpos: true,
+    initpos: false,
     lastScrollY: 0, // Keep track of current position in state
   };
 
@@ -30,8 +32,6 @@ class NavBar extends Component {
   handleScroll = () => {
     const { lastScrollY } = this.state;
     const currentScrollY = window.scrollY;
-    console.log(currentScrollY <= 90);
-    console.log(lastScrollY);
 
     if (currentScrollY > lastScrollY) {
       this.setState({ slide: "-58px" });
@@ -55,7 +55,7 @@ class NavBar extends Component {
 
   render() {
     return (
-      <header className="w-0 h-0 md:w-full ">
+      <header className="w-0 h-0 md:w-full">
         <div
           className={
             !this.state.clicked
@@ -86,7 +86,7 @@ class NavBar extends Component {
             />
           </Link>
 
-          <nav className="  p-0 justify-end items-center  flex-row mr-20 ml-10 hidden md:flex ">
+          <nav className="  p-0 justify-end items-center  flex-row mr-10 ml-10 hidden md:flex ">
             <Link
               to="Home-section"
               spy={true}
@@ -130,7 +130,7 @@ class NavBar extends Component {
               Projects
             </Link>
             <a
-              className="transition-all float-right  duration-500 justify-center rounded  py-1 px-3 mx-4 my-2 border-solid border-2 border-teal-500 text-teal-500 hover:bg-teal-500 hover:bg-opacity-20"
+              className="transition-all inline-flex items-center  duration-500 justify-center rounded  py-1 px-3 ml-4 my-2 border-solid border-2 border-teal-500 text-teal-500 hover:bg-teal-500 hover:bg-opacity-20"
               href={resume}
               target="_blank"
               rel="noopener noreferrer"
@@ -151,106 +151,78 @@ class NavBar extends Component {
             ></i>
           </button>
         </div>
+        <Slide right when={this.state.clicked}>
+          <div
+            className={
+              this.state.clicked
+                ? "mx-auto flex flex-col sm:flex-row justify-between justify-center fixed top-0 w-full h-full md:hidden z-40 blur"
+                : "mx-auto flex flex-col sm:flex-row justify-between justify-center fixed top-0 w-full h-full md:hidden z-0 "
+            }
+          >
+            <div className="flex inline-flex w-full justify-center items-center h-1/3 bg-gray-800 bg-opacity-75 sm:h-full sm:w-1/2 ">
+              <img
+                src={image}
+                className=" rounded-full w-48 h-48 lg:w-64 lg:h-64  border-solid border-teal-500 border-2 lg:border-4"
+                alt="Ahmed Hassan"
+              />
+            </div>
 
-        <div
-          className={
-            this.state.clicked
-              ? "mx-auto flex flex-col sm:flex-row justify-between justify-center fixed top-0 w-full h-full md:hidden z-40 blur"
-              : "mx-auto flex flex-col sm:flex-row justify-between justify-center fixed top-0 w-full h-full md:hidden z-0"
-          }
-        >
-          <Transition
-            items={this.state.clicked}
-            from={{ transform: "translate3d(0,-1000px,0)" }}
-            enter={{ transform: "translate3d(0,0px,0)" }}
-            leave={{ transform: "translate3d(0,-1000px,0)" }}
-          >
-            {(clicked) =>
-              clicked &&
-              ((props) => (
-                <animated.div
-                  className="flex inline-flex w-full justify-center items-center h-1/3 bg-gray-800 bg-opacity-75 sm:h-full sm:w-1/2 "
-                  style={props}
-                >
-                  <img
-                    src={image}
-                    className=" rounded-full w-48 h-48 lg:w-64 lg:h-64  border-solid border-teal-500 border-2 lg:border-4"
-                    alt="Ahmed Hassan"
-                  />
-                </animated.div>
-              ))
-            }
-          </Transition>
-          <Transition
-            items={this.state.clicked}
-            from={{ transform: "translate3d(0,1000px,0)" }}
-            enter={{ transform: "translate3d(0,0px,0)" }}
-            leave={{ transform: "translate3d(0,1000px,0)" }}
-          >
-            {(show) =>
-              show &&
-              ((props) => (
-                <animated.nav
-                  style={props}
-                  className="flex inline-flex justify-center items-center flex-col  sm:w-1/2 w-full sm:h-full h-2/3 bg-gray-900 opacity-90"
-                >
-                  <Link
-                    to="Home-section"
-                    spy={true}
-                    smooth={true}
-                    duration={500}
-                    activeClass="text-teal-400 bg-teal-100"
-                    className={navButton}
-                    onClick={this.handleClick}
-                  >
-                    Home
-                  </Link>
-                  <Link
-                    to="about-section"
-                    spy={true}
-                    smooth={true}
-                    duration={500}
-                    activeClass="text-teal-400  bg-teal-100"
-                    className={navButton}
-                    onClick={this.handleClick}
-                  >
-                    About Me
-                  </Link>
-                  <Link
-                    to="Experience-section"
-                    spy={true}
-                    smooth={true}
-                    duration={500}
-                    activeClass="text-teal-400  bg-teal-100"
-                    className={navButton}
-                    onClick={this.handleClick}
-                  >
-                    Experiences
-                  </Link>
-                  <Link
-                    to="Project-section"
-                    spy={true}
-                    smooth={true}
-                    duration={500}
-                    activeClass="text-teal-400 bg-teal-100"
-                    className={navButton}
-                    onClick={this.handleClick}
-                  >
-                    Projects
-                  </Link>
-                  <a
-                    className=" inline-flextransition-all duration-500 justify-center rounded  py-1 px-3 mx-auto my-4 border-solid border-2 border-teal-500 text-teal-500 hover:bg-teal-500 hover:bg-opacity-20 text-xl"
-                    href={resume}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Resume
-                  </a>
-                </animated.nav>
-              ))
-            }
-          </Transition>
-        </div>
+            <nav className="flex inline-flex justify-center items-center flex-col  sm:w-1/2 w-full sm:h-full h-2/3 bg-gray-900 opacity-90">
+              <Link
+                to="Home-section"
+                spy={true}
+                smooth={true}
+                duration={500}
+                activeClass="text-teal-400 bg-teal-100"
+                className={navButton}
+                onClick={this.handleClick}
+              >
+                Home
+              </Link>
+              <Link
+                to="about-section"
+                spy={true}
+                smooth={true}
+                duration={500}
+                activeClass="text-teal-400  bg-teal-100"
+                className={navButton}
+                onClick={this.handleClick}
+              >
+                About Me
+              </Link>
+              <Link
+                to="Experience-section"
+                spy={true}
+                smooth={true}
+                duration={500}
+                activeClass="text-teal-400  bg-teal-100"
+                className={navButton}
+                onClick={this.handleClick}
+              >
+                Experiences
+              </Link>
+              <Link
+                to="Project-section"
+                spy={true}
+                smooth={true}
+                duration={500}
+                activeClass="text-teal-400 bg-teal-100"
+                className={navButton}
+                onClick={this.handleClick}
+              >
+                Projects
+              </Link>
+              <a
+                className=" inline-flextransition-all duration-500 justify-center rounded  py-1 px-3 mx-auto my-4 border-solid border-2 border-teal-500 text-teal-500 hover:bg-teal-500 hover:bg-opacity-20 text-xl"
+                href={resume}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Resume
+              </a>
+            </nav>
+          </div>
+        </Slide>
       </header>
     );
   }

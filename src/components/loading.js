@@ -13,14 +13,18 @@ export default class Loading extends React.Component {
     super(props);
     this.state = {
       done: undefined,
+      experienceData: undefined,
+      projectData: undefined,
     };
   }
 
   componentDidMount() {
     setTimeout(() => {
+      //fetching experiences
       sanityClient
         .fetch(
-          `*[_type=="experience"]{title,
+          `*[_type=="experience"]
+          {title,
           _id,
           slug,
           mainImage{ 
@@ -36,9 +40,25 @@ export default class Loading extends React.Component {
           "name": author->name,
           "authorImage": author->image }`
         )
-
-        .then((data) => this.setState({ done: true }));
-    }, 2000);
+        .then((data) => {
+          this.setState({ experienceData: data });
+        });
+      //fetching projects
+      sanityClient
+        .fetch(
+          `*[_type == "project"]{ 
+                title,
+                date,
+                place,
+                description,
+                projectType,
+                link,
+                tags}`
+        )
+        .then((data) => {
+          this.setState({ done: true, projectData: data });
+        });
+    }, 1500);
   }
 
   render() {
@@ -49,7 +69,7 @@ export default class Loading extends React.Component {
             <img
               src={logo}
               alt="logo"
-              className=" rounded p-0 animate-pulse h-20 w-20 "
+              className=" rounded p-0 animate-pulse duration-200 h-20 w-20 "
             />
           </div>
         ) : (
@@ -62,10 +82,10 @@ export default class Loading extends React.Component {
               <About />
             </Element>
             <Element id="Experience-section" name="Experience-section">
-              <Experience />
+              <Experience experienceData={this.state.experienceData} />
             </Element>
             <Element id="Project-section" name="Project-section">
-              <Project />
+              <Project projectData={this.state.projectData} />
             </Element>
           </>
         )}
