@@ -119,6 +119,16 @@ module.exports = {
           900: "#702459",
         },
       },
+      typography: (theme) => ({
+        DEFAULT: {
+          css: {
+            color: "#333",
+            strong: {
+              color: theme("colors.gray.400"),
+            },
+          },
+        },
+      }),
     },
   },
   variants: {

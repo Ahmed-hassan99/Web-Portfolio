@@ -28,7 +28,7 @@ const SingleExperience = (props) => {
             }
           )}
         </h2>
-        <div className="text-gray-200 prose-sm lg:prose-lg max-w-full p-1 ">
+        <div className=" prose text-gray-200 prose-sm lg:prose-lg max-w-full p-1 ">
           <BlockContent
             blocks={props.singleExperience.jobDescription}
             projectId="0rdpl6dw"
