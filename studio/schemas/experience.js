@@ -46,6 +46,11 @@ export default {
       type: "datetime",
     },
     {
+      name: "ended",
+      title: "Ended?",
+      type: "boolean",
+    },
+    {
       name: "jobDescription",
       title: "Job Description",
       type: "blockContent",

@@ -4,7 +4,7 @@ import { SocialIcon } from "react-social-icons";
 import Fade from "react-reveal/Fade";
 //import images and pdf
 import image from "../Assets/Biomedical-Eng-background1.jpg";
-import resume from "../Assets/Resume.pdf";
+import resume from "../Assets/Resume_AhmedHassan.pdf";
 
 export default function Home() {
   return (

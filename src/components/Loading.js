@@ -37,8 +37,8 @@ export default class Loading extends React.Component {
           jobDescription,
           startDate,
           endDate,
-          "name": author->name,
-          "authorImage": author->image }`
+          ended,
+           }`
         )
         .then((data) => {
           this.setState({ experienceData: data });

@@ -30,30 +30,24 @@ const Experience = (props) => {
           >
             <TabList className="flex flex-row inline-flex md:flex-col flex-none overflow-x-auto  ">
               {props.experienceData &&
-                props.experienceData
-                  .slice(0)
-                  .reverse()
-                  .map((experience) => (
-                    <Tab
-                      selectedClassName="text-teal-400 border-teal-400 bg-opacity-40 blur bg-teal-900"
-                      className="cursor-pointer flex-shrink-0 inline-flex items-center border-b-4 md:border-b-0 md:border-l-4 border-gray-800 justify-center transition-all  duration-700  py-3 px-3  text-teal-100 hover:bg-opacity-40 hover:blur hover:bg-teal-900 hover:text-teal-400 font-bold text-xs md:text-sm "
-                    >
-                      {experience.place}{" "}
-                    </Tab>
-                  ))}
+                props.experienceData.map((experience) => (
+                  <Tab
+                    selectedClassName="text-teal-400 border-teal-400 bg-opacity-40 blur bg-teal-900"
+                    className="cursor-pointer flex-shrink-0 inline-flex items-center border-b-4 md:border-b-0 md:border-l-4 border-gray-800 justify-center transition-all  duration-700  py-3 px-3  text-teal-100 hover:bg-opacity-40 hover:blur hover:bg-teal-900 hover:text-teal-400 font-bold text-xs md:text-sm "
+                  >
+                    {experience.place}{" "}
+                  </Tab>
+                ))}
             </TabList>
 
             {props.experienceData &&
-              props.experienceData
-                .slice(0)
-                .reverse()
-                .map((experience) => (
-                  <TabPanel>
-                    <>
-                      <SingleExperience singleExperience={experience} />
-                    </>
-                  </TabPanel>
-                ))}
+              props.experienceData.map((experience) => (
+                <TabPanel>
+                  <>
+                    <SingleExperience singleExperience={experience} />
+                  </>
+                </TabPanel>
+              ))}
           </Tabs>
         </section>
       </Fade>

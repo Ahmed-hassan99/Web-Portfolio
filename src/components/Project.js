@@ -16,15 +16,15 @@ const Project = (props) => {
             Welcome to my projects page!
           </h2>
           <Fade top cascade>
-            <section className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
+            <section className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 ">
               {props.projectData &&
                 props.projectData.map((project, index) => (
-                  <article className="relative h-80 rounded-lg shadow-xl bg-blue-900 bg-opacity-30 p-8 sm:p-12 ">
-                    <h3 className="text-gray-100 text-2xl sm:text-3xl font-bold mb-2 transition-all duration-500 hover:text-teal-700 ">
+                  <article className="relative   rounded-lg shadow-xl bg-blue-900 bg-opacity-30 p-8 sm:p-12  ">
+                    <h3 className="text-gray-100 text-2xl sm:text-3xl font-bold mb-2 transition-all duration-500  ">
                       {project.title}
                     </h3>
 
-                    <p className="my-3 text-md sm:text-lg text-gray-300 leading-relaxed ">
+                    <p className="my-3 text-base sm:text-lg text-gray-300 leading-relaxed  mb-5">
                       {project.description}
                     </p>
                     <div className="absolute bottom-0 left-0  p-5 lg:p-10 text-gray-600 text-xs">
