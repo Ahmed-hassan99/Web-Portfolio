@@ -74,19 +74,22 @@ export default class Loading extends React.Component {
           </div>
         ) : (
           <>
-            <Navbar />
-            <Element id="Home-section" name="Home-section">
-              <Home />
-            </Element>
-            <Element id="about-section" name="about-section">
-              <About />
-            </Element>
-            <Element id="Experience-section" name="Experience-section">
-              <Experience experienceData={this.state.experienceData} />
-            </Element>
-            <Element id="Project-section" name="Project-section">
-              <Project projectData={this.state.projectData} />
-            </Element>
+            <div className="bg-gray-900">
+              <Navbar />
+              <Element id="Home-section" name="Home-section">
+                <Home />
+              </Element>
+
+              <Element id="about-section" name="about-section">
+                <About />
+              </Element>
+              <Element id="Experience-section" name="Experience-section">
+                <Experience experienceData={this.state.experienceData} />
+              </Element>
+              <Element id="Project-section" name="Project-section">
+                <Project projectData={this.state.projectData} />
+              </Element>
+            </div>
           </>
         )}
       </div>

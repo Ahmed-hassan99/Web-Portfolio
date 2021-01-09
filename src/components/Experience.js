@@ -33,7 +33,7 @@ const Experience = (props) => {
                 props.experienceData.map((experience) => (
                   <Tab
                     selectedClassName="text-teal-400 border-teal-400 bg-opacity-40 blur bg-teal-900"
-                    className="cursor-pointer flex-shrink-0 inline-flex items-center border-b-4 md:border-b-0 md:border-l-4 border-gray-800 justify-center transition-all  duration-700  py-3 px-3  text-teal-100 hover:bg-opacity-40 hover:blur hover:bg-teal-900 hover:text-teal-400 font-bold text-xs md:text-sm "
+                    className="cursor-pointer flex-shrink-0 inline-flex items-center border-b-4 md:border-b-0 md:border-l-4 border-gray-800 justify-center transition-all  duration-300  py-3 px-3  text-teal-100 hover:bg-opacity-40 hover:blur hover:bg-teal-900 hover:text-teal-400 font-bold text-xs md:text-sm "
                   >
                     {experience.place}{" "}
                   </Tab>

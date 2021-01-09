@@ -8,7 +8,7 @@ import image from "../Assets/Headshott.jpg";
 import logo from "../Assets/AH-logo.png";
 
 const navButton =
-  "inline-flex items-center cursor-pointer justify-center transition-all w-full duration-500 py-3 px-3 my-4 rounded text-teal-100 hover:text-teal-400 font-bold text-xl";
+  "inline-flex items-center cursor-pointer justify-center transition-all w-full duration-300 py-3 px-3 my-4 rounded text-teal-100 hover:text-teal-400 font-bold text-xl";
 
 class NavBar extends Component {
   state = { clicked: false };
@@ -82,7 +82,7 @@ class NavBar extends Component {
             <img
               src={logo}
               alt="logo"
-              className="h-8 w-8 ml-10 my-3 float-left transition-all duration-500 hover:opacity-100 opacity-80 rounded"
+              className="h-8 w-8 ml-10 my-3 float-left transition-all duration-300 hover:opacity-100 opacity-80 rounded"
             />
           </Link>
 
@@ -93,7 +93,7 @@ class NavBar extends Component {
               smooth={true}
               duration={500}
               activeClass="text-teal-400  "
-              className="inline-flex items-center cursor-pointer transition-all duration-500 px-3  rounded text-teal-100 hover:text-teal-400 font-bold text-1xl"
+              className="inline-flex items-center cursor-pointer transition-all duration-300 px-3  rounded text-teal-100 hover:text-teal-400 font-bold text-1xl"
             >
               Home
             </Link>
@@ -103,7 +103,7 @@ class NavBar extends Component {
               spy={true}
               smooth={true}
               duration={500}
-              className="inline-flex items-center cursor-pointer transition-all  duration-500 py-3 px-3  rounded text-teal-100 hover:text-teal-400 font-bold text-1xl"
+              className="inline-flex items-center cursor-pointer transition-all  duration-300 py-3 px-3  rounded text-teal-100 hover:text-teal-400 font-bold text-1xl"
               activeClass="text-teal-400 "
             >
               About Me
@@ -115,7 +115,7 @@ class NavBar extends Component {
               smooth={true}
               duration={500}
               activeClass="text-teal-400 "
-              className="inline-flex items-center cursor-pointer transition-all  duration-500 py-3 px-3  rounded text-teal-100 hover:text-teal-400 font-bold text-1xl"
+              className="inline-flex items-center cursor-pointer transition-all  duration-300 py-3 px-3  rounded text-teal-100 hover:text-teal-400 font-bold text-1xl"
             >
               Experiences
             </Link>
@@ -125,12 +125,12 @@ class NavBar extends Component {
               smooth={true}
               duration={500}
               activeClass="text-teal-400 "
-              className="inline-flex items-center cursor-pointer transition-all  duration-500 py-3 px-3  rounded text-teal-100 hover:text-teal-400 font-bold text-1xl"
+              className="inline-flex items-center cursor-pointer transition-all  duration-300 py-3 px-3  rounded text-teal-100 hover:text-teal-400 font-bold text-1xl"
             >
               Projects
             </Link>
             <a
-              className="transition-all inline-flex items-center  duration-500 justify-center rounded  py-1 px-3 ml-4 my-2 border-solid border-2 border-teal-500 text-teal-500 hover:bg-teal-500 hover:bg-opacity-20"
+              className="transition-all inline-flex items-center  duration-300 justify-center rounded  py-1 px-3 ml-4 my-2 border-solid border-2 border-teal-500 text-teal-500 hover:bg-teal-500 hover:bg-opacity-20"
               href={resume}
               target="_blank"
               rel="noopener noreferrer"
@@ -139,7 +139,7 @@ class NavBar extends Component {
             </a>
           </nav>
           <button
-            className=" p-0 float-right transition-all duration-500 items-center mr-10 my-3  md:hidden cursor-pointer z-50 "
+            className=" p-0 float-right transition-all duration-300 items-center mr-10 my-3  md:hidden cursor-pointer z-50 "
             onClick={this.handleClick}
           >
             <i
@@ -213,7 +213,7 @@ class NavBar extends Component {
                 Projects
               </Link>
               <a
-                className=" inline-flextransition-all duration-500 justify-center rounded  py-1 px-3 mx-auto my-4 border-solid border-2 border-teal-500 text-teal-500 hover:bg-teal-500 hover:bg-opacity-20 text-xl"
+                className=" inline-flextransition-all duration-300 justify-center rounded  py-1 px-3 mx-auto my-4 border-solid border-2 border-teal-500 text-teal-500 hover:bg-teal-500 hover:bg-opacity-20 text-xl"
                 href={resume}
                 target="_blank"
                 rel="noopener noreferrer"
