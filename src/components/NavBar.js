@@ -130,7 +130,7 @@ class NavBar extends Component {
               Projects
             </Link>
             <a
-              className="transition-all inline-flex items-center  duration-300 justify-center rounded  py-1 px-3 ml-4 my-2 border-solid border-2 border-teal-500 text-teal-500 hover:bg-teal-500 hover:bg-opacity-20"
+              className="transition-all inline-flex items-center  duration-300 justify-center rounded  py-1 px-3 ml-4 my-2 border-solid border-2 border-teal-500 text-teal-500 hover:bg-teal-500 hover:bg-opacity-30 font-bold hover:text-teal-400"
               href={resume}
               target="_blank"
               rel="noopener noreferrer"

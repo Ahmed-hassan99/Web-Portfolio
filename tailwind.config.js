@@ -126,6 +126,13 @@ module.exports = {
             strong: {
               color: theme("colors.gray.400"),
             },
+            a: {
+              color: theme("colors.teal.400"),
+              textDecoration: "none",
+              "&:hover": {
+                textDecoration: "underline",
+              },
+            },
           },
         },
       }),

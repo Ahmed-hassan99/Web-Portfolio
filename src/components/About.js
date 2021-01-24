@@ -64,7 +64,7 @@ export default function About() {
             </div>
 
             <div className="text-lg inline-flex flex-col  justify-between md:flex-row ">
-              <div className="prose-lg lg:prose-2xl inline-flex flex-col text-white items-center">
+              <div className="prose prose-lg lg:prose-2xl inline-flex flex-col text-white items-center transition-all  duration-300">
                 <BlockContent
                   blocks={author.bio}
                   projectId="0rdpl6dw"

@@ -10,6 +10,7 @@ import project from "./project";
 import experience from "./experience";
 import post from "./post";
 import author from "./author";
+import resume from "./resume";
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -21,11 +22,13 @@ export default createSchema({
     // The following are document types which will appear
     // in the studio.
     post,
+
     author,
     project,
     experience,
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas
     blockContent,
+    resume,
   ]),
 });
