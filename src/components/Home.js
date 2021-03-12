@@ -5,6 +5,7 @@ import Fade from "react-reveal/Fade";
 //import images and pdf
 import image from "../Assets/Biomedical-Eng-background1.jpg";
 import resume from "../Assets/Resume_AhmedHassan.pdf";
+const email = "mailto:ahmed@ahmedahassan.com";
 
 export default function Home() {
   return (
@@ -39,7 +40,7 @@ export default function Home() {
                 />
 
                 <SocialIcon
-                  url="https://www.linkedin.com/in/ahmed-hassan-ca/"
+                  url="https://www.linkedin.com/in/ahmedhassan-ah/"
                   className="mr-4  rounded-full  transition-all  duration-300 hover:bg-teal-500"
                   target="_blank"
                   fgColor="#fff"
@@ -59,7 +60,7 @@ export default function Home() {
               <div className="inline-flex hidden md:block">
                 <a
                   className="  transition-all text-2xl text-gray-300 duration-300 justify-center font-bold  rounded flex inline-flex md:mx-1 py-3 px-3 my-4 border-solid border-2 border-teal-500 text-teal-500 hover:bg-teal-500 hover:bg-opacity-20"
-                  href="mailto:ahmed99dodo1999@gmail.com"
+                  href={email}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -71,7 +72,7 @@ export default function Home() {
             <section className="transition-all md:hidden duration-300 relative text-lg sm:text-2xl flex px-8 text-teal-500 flex-col md:flex-row  leading-none lg:leading-snug">
               <a
                 className="  transition-all  duration-300 justify-center font-bold  rounded flex inline-flex mx-auto md:mx-2 py-3 px-3 my-2 border-solid border-2 border-teal-500  hover:bg-teal-500 hover:bg-opacity-20"
-                href="mailto:ahmed99dodo1999@gmail.com"
+                href={email}
                 target="_blank"
                 rel="noopener noreferrer"
               >
