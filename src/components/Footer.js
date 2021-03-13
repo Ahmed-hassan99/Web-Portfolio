@@ -1,7 +1,6 @@
 //import react libraries
 import React from "react";
 import { SocialIcon } from "react-social-icons";
-import Fade from "react-reveal/Fade";
 
 const email = "mailto:ahmed@ahmedahassan.com";
 
@@ -12,6 +11,15 @@ export default function Contact() {
         <div className=" inline-flex flex  py-3 px-4 my-2 justify-center ">
           <SocialIcon
             url="https://github.com/Ahmed-hassan99"
+            className="mr-4 rounded-full  transition-all  duration-300 hover:bg-gray-900"
+            target="_blank"
+            fgColor="#cbd5e0"
+            bgColor="#ffffff00"
+            style={{ height: 50, width: 50 }}
+          />
+
+          <SocialIcon
+            url={email}
             className="mr-4 rounded-full  transition-all  duration-300 hover:bg-gray-900"
             target="_blank"
             fgColor="#cbd5e0"

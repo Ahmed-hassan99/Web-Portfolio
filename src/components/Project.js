@@ -8,9 +8,9 @@ const Project = (props) => {
         <section className="container mx-auto">
           <Fade>
             <h1 className=" text-2xl sm:text-5xl flex justify-center lg:justify-start nameFont text-teal-100 mb-5">
-              <strong className=" flex-none  font-bold pr-4">Some of My</strong>
+              <strong className=" flex-none  font-bold pr-4">Some of </strong>
               <strong className=" flex-none text-teal-500 font-bold pr-4">
-                Projects
+                My Work
               </strong>
               <div className="relative w-full ">
                 <div className="absolute w-full border-gray-500 border-t-2 inset-y-1/2 opacity-50"></div>

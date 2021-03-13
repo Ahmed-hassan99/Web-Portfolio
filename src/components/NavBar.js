@@ -4,7 +4,6 @@ import Slide from "react-reveal/Slide";
 import { Link } from "react-scroll";
 //import images and pdf
 import resume from "../Assets/Resume_AhmedHassan.pdf";
-import image from "../Assets/Headshott.jpg";
 import logo from "../Assets/AH-logo.png";
 
 const navButton =

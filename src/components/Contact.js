@@ -1,6 +1,5 @@
 //import react libraries
 import React from "react";
-import { SocialIcon } from "react-social-icons";
 import Fade from "react-reveal/Fade";
 
 const email = "mailto:ahmed@ahmedahassan.com";
