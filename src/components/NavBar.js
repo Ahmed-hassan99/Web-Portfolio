@@ -159,15 +159,7 @@ class NavBar extends Component {
                 : "mx-auto flex flex-col sm:flex-row justify-between justify-center fixed top-0 w-full h-full md:hidden z-0 "
             }
           >
-            <div className="flex inline-flex w-full justify-center items-center h-1/3 bg-gray-800 bg-opacity-75 sm:h-full sm:w-1/2 ">
-              <img
-                src={image}
-                className=" rounded-full w-48 h-48 lg:w-64 lg:h-64  border-solid border-teal-500 border-2 lg:border-4"
-                alt="Ahmed Hassan"
-              />
-            </div>
-
-            <nav className="flex inline-flex justify-center items-center flex-col  sm:w-1/2 w-full sm:h-full h-2/3 bg-gray-900 opacity-90">
+            <nav className="flex inline-flex justify-center items-center flex-col  w-full h-full  bg-gray-900 opacity-90">
               <Link
                 to="Home-section"
                 spy={true}

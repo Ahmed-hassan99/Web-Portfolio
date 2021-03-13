@@ -18,7 +18,7 @@ export default function Home() {
       <div className="absolute bg-gray-900 bg-opacity-90 h-full w-full fixed top-0 z-0 blur2 "></div>
       <div className=" absolute inset-y-1/4 inset-x-0 ">
         <Fade top cascade>
-          <div className=" container mx-auto">
+          <div className=" container mx-auto md:w-4/5">
             <section className="relative flex flex-col px-8  justify-center lg:justify-start">
               <h1 className="transition-all  duration-300 inline-flex justify-center lg:justify-start  text-4xl sm:text-6xl md:text-7xl sm:pt-30 lg:text-8xl text-gray-300 font-bold nameFont leading-none lg:leading-snug  z-30">
                 Ahmed

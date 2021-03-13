@@ -4,6 +4,8 @@ import About from "./About.js";
 import Project from "./Project.js";
 import Experience from "./Experience.js";
 import Navbar from "./NavBar";
+import Contact from "./Contact.js";
+import Footer from "./Footer.js";
 import { Element } from "react-scroll";
 import sanityClient from "../client.js";
 import logo from "../Assets/AH-logo.png";
@@ -88,6 +90,13 @@ export default class Loading extends React.Component {
               </Element>
               <Element id="Project-section" name="Project-section">
                 <Project projectData={this.state.projectData} />
+              </Element>
+              <Element id="Contact-section" name="Contact-section">
+                <Contact />
+              </Element>
+
+              <Element id="Footer-section" name="Footer-section">
+                <Footer />
               </Element>
             </div>
           </>

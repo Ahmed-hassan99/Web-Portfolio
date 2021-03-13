@@ -9,19 +9,19 @@ import Fade from "react-reveal/Fade";
 const Experience = (props) => {
   const [tabIndex, setTabIndex] = useState(0);
   return (
-    <main className=" bg-gray-900 bg-opacity-100 blur2 m-0 min-h-screen">
+    <main className=" bg-gray-900 bg-opacity-100 blur2 m-0 md:w-4/5 md:mx-auto">
       <Fade>
         <section className="container relative  mx-auto  p-5 lg:p-10">
-          <h1 className="text-2xl sm:text-5xl flex justify-center lg:justify-start nameFont text-teal-100 mb-5">
+          <h1 className="text-2xl sm:text-5xl inline-flex flex-row justify-center lg:justify-start nameFont text-teal-100 mb-5 w-full ">
             Experience
-            <strong className="pl-2 text-teal-500 font-bold">
-              {" "}
-              & Education
+            <strong className="pl-2 text-teal-500 font-bold  flex-none pr-4">
+              {" & Education"}
             </strong>
+            <div className="relative w-full ">
+              <div className="absolute w-full border-gray-500 border-t-2 inset-y-1/2 opacity-50"></div>
+            </div>
           </h1>
-          <h2 className=" text-sm text-center sm:text-lg text-gray-400 flex justify-center lg:justify-start mb-6 sm:mb-12 italic ">
-            Welcome to my page of professional Experiences!
-          </h2>
+
           {/* <BrowserRouter> */}
           <Tabs
             selectedIndex={tabIndex}

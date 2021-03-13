@@ -38,12 +38,15 @@ export default function About() {
     );
 
   return (
-    <main className=" relative bg-gray-900 blur2">
+    <main className=" relative bg-gray-900 blur2 md:w-4/5 md:mx-auto">
       <div className="p-5  lg:p-10  container mx-auto relative">
         <Fade>
-          <h1 className="text-3xl sm:text-5xl flex justify-center lg:justify-start nameFont text-teal-100 mb-5">
+          <h1 className="text-2xl sm:text-5xl flex justify-center lg:justify-start nameFont text-teal-100 mb-5">
             About
-            <strong className="pl-2 text-teal-500 font-bold"> Me</strong>
+            <strong className="pl-2 text-teal-500 font-bold pr-4"> Me</strong>
+            <div className=" relative w-full  ">
+              <div className="absolute w-full border-gray-500 border-t-2 inset-y-1/2 opacity-50"></div>
+            </div>
           </h1>
         </Fade>
         <Fade>
@@ -57,14 +60,22 @@ export default function About() {
                   {", "}
                 </span>
               </h1>
-              <h2 className="text-md inline sm:text-base md:text-xl lg:text-2xl xl:text-3xl text-teal-100 ">
+              <h2 className="inline text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl text-teal-100 ">
                 {" "}
-                an {author.degree}{" "}
+                an{" "}
+                <a
+                  href="https://www.eng.mcmaster.ca/ibiomed/programs/degree-options/bengbme/electrical-and-biomedical-engineering"
+                  className="capitalize text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl text-teal-400 hover:underline"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {author.degree}
+                </a>{" "}
               </h2>
             </div>
 
-            <div className="text-lg inline-flex flex-col  justify-between md:flex-row ">
-              <div className="prose prose-lg lg:prose-2xl inline-flex flex-col text-white items-center transition-all  duration-300">
+            <div className="text-lg inline-flex flex-col  lg:justify-between xl:flex-row items-center justify-center">
+              <div className="prose prose lg:prose-lg inline-flex flex-col text-white items-center transition-all  duration-300">
                 <BlockContent
                   blocks={author.bio}
                   projectId="0rdpl6dw"
@@ -75,7 +86,7 @@ export default function About() {
               <div className=" inline-flex flex-none  items-center justify-center m-5 ">
                 <img
                   src={urlFor(author.authorImage).url()}
-                  className=" rounded max-w-80 max-h-80 border-solid border-teal-500 border-2 "
+                  className=" rounded max-h-80 border-solid border-teal-500 border-2 "
                   alt={author.name}
                 />
               </div>
