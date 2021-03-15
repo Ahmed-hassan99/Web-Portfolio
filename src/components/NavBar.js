@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 // react  reveal and scroll
-import { NavHashLink } from "react-router-hash-link";
+import { HashLink } from "react-router-hash-link";
 //import images and pdf
 // import resume from "../Assets/Resume_AhmedHassan.pdf";
 import logo from "../Assets/AH-logo.png";
@@ -67,7 +67,7 @@ class NavBar extends Component {
             transition: "transform 90ms linear",
           }}
         >
-          <NavHashLink
+          <HashLink
             smooth
             to="/#Home-section"
             className="cursor-pointer"
@@ -80,44 +80,44 @@ class NavBar extends Component {
               alt="logo"
               className="h-8 w-8 ml-10 my-3 float-left transition-all duration-300 hover:opacity-100 opacity-80 rounded"
             />
-          </NavHashLink>
+          </HashLink>
 
           <nav className="  p-0 justify-end items-center  flex-row mr-10 ml-10 hidden md:flex ">
-            <NavHashLink
+            <HashLink
               smooth
               to="/#Home-section"
               activeClassName="text-teal-400  "
               className="inline-flex items-center cursor-pointer transition-all duration-300 px-3  rounded text-teal-100 hover:text-teal-400 font-bold text-1xl"
             >
               Home
-            </NavHashLink>
+            </HashLink>
 
-            <NavHashLink
+            <HashLink
               smooth
               to="/#about-section"
               className="inline-flex items-center cursor-pointer transition-all  duration-300 py-3 px-3  rounded text-teal-100 hover:text-teal-400 font-bold text-1xl"
               activeClassName="text-teal-400 "
             >
               About Me
-            </NavHashLink>
+            </HashLink>
 
-            <NavHashLink
+            <HashLink
               smooth
               to="/#Experience-section"
               activeClassName="text-teal-400 "
               className="inline-flex items-center cursor-pointer transition-all  duration-300 py-3 px-3  rounded text-teal-100 hover:text-teal-400 font-bold text-1xl"
             >
               Experiences
-            </NavHashLink>
+            </HashLink>
 
-            <NavHashLink
+            <HashLink
               smooth
               to="/#Project-section"
               activeClassName="text-teal-400 "
               className="inline-flex items-center cursor-pointer transition-all  duration-300 py-3 px-3  rounded text-teal-100 hover:text-teal-400 font-bold text-1xl"
             >
               Projects
-            </NavHashLink>
+            </HashLink>
 
             <a
               className="transition-all inline-flex items-center  duration-300 justify-center rounded  py-1 px-3 ml-4 my-2 border-solid border-2 border-teal-500 text-teal-500 hover:bg-teal-500 hover:bg-opacity-30 font-bold hover:text-teal-400"
@@ -150,7 +150,7 @@ class NavBar extends Component {
           }
         >
           <nav className="flex inline-flex justify-center items-center flex-col  w-full h-full  bg-gray-900 opacity-90">
-            <NavHashLink
+            <HashLink
               smooth
               to="/#Home-section"
               activeClassName="text-teal-400 bg-teal-100"
@@ -158,8 +158,8 @@ class NavBar extends Component {
               onClick={this.handleClick}
             >
               Home
-            </NavHashLink>
-            <NavHashLink
+            </HashLink>
+            <HashLink
               smooth
               to="/#about-section"
               activeClassName="text-teal-400  bg-teal-100"
@@ -167,8 +167,8 @@ class NavBar extends Component {
               onClick={this.handleClick}
             >
               About Me
-            </NavHashLink>
-            <NavHashLink
+            </HashLink>
+            <HashLink
               smooth
               to="/#Experience-section"
               activeClassName="text-teal-400  bg-teal-100"
@@ -176,8 +176,8 @@ class NavBar extends Component {
               onClick={this.handleClick}
             >
               Experiences
-            </NavHashLink>
-            <NavHashLink
+            </HashLink>
+            <HashLink
               smooth
               to="/#Project-section"
               activeClassName="text-teal-400 bg-teal-100"
@@ -185,7 +185,7 @@ class NavBar extends Component {
               onClick={this.handleClick}
             >
               Projects
-            </NavHashLink>
+            </HashLink>
             <a
               className=" inline-flextransition-all duration-300 justify-center rounded  py-1 px-3 mx-auto my-4 border-solid border-2 border-teal-500 text-teal-500 hover:bg-teal-500 hover:bg-opacity-20 text-xl"
               href={this.props.resume}

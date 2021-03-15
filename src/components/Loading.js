@@ -93,21 +93,14 @@ export default class Loading extends React.Component {
           <BrowserRouter>
             <div>
               <Navbar resume={this.state.authorData.authorResume} />
-              {/* <div>
-                <a
-                  href={`${this.state.authorData.authorResume}`}
-                  target="_blank"
-                  rel="noopener"
-                >
-                  Resume
-                </a>
-              </div> */}
+
               <Switch>
                 <Route
                   path="/"
                   exact
                   render={(props) => (
                     <Main
+                      resume={this.state.authorData.authorResume}
                       experienceData={this.state.experienceData}
                       authorData={this.state.authorData}
                       projectData={this.state.projectData}

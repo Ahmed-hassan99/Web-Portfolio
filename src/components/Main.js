@@ -12,7 +12,7 @@ const Main = (props) => {
     <>
       <div className="bg-gray-900">
         <Element id="Home-section" name="Home-section">
-          <Home />
+          <Home resume={props.resume} />
         </Element>
 
         <Element id="about-section" name="about-section">

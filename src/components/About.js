@@ -1,6 +1,5 @@
 import React from "react";
 import sanityClient from "../client.js";
-// import image from "../Assets/Biomedical-Eng-background1.jpg";
 import imageUrlBuilder from "@sanity/image-url";
 
 import Fade from "react-reveal/Fade";
