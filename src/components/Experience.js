@@ -11,7 +11,7 @@ const Experience = (props) => {
   return (
     <main className=" bg-gray-900 bg-opacity-100 blur2 m-0 md:w-4/5 md:mx-auto">
       <Fade>
-        <section className="container relative  mx-auto  p-5 lg:p-10">
+        <section className="container relative  mx-auto  p-5 ">
           <h1 className="text-2xl sm:text-5xl inline-flex flex-row justify-center lg:justify-start nameFont text-teal-100 mb-5 w-full ">
             Experience
             <strong className="pl-2 text-teal-500 font-bold  flex-none pr-4">

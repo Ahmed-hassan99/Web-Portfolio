@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import sanityClient from "../client.js";
 // import image from "../Assets/Biomedical-Eng-background1.jpg";
 import imageUrlBuilder from "@sanity/image-url";
@@ -11,35 +11,10 @@ function urlFor(source) {
   return builder.image(source);
 }
 
-export default function About() {
-  const [author, setAuthor] = useState(null);
-
-  useEffect(() => {
-    sanityClient
-      .fetch(
-        `*[_type == "author"]{
-                name, 
-                degree,
-                bio,
-                "authorImage": image.asset->url
-            }`
-      )
-      .then((data) => setAuthor(data[0]))
-      .catch(console.error);
-  }, []);
-
-  if (!author)
-    return (
-      <div className="relative min-h-screen bg-gray-900 bg-opacity-100">
-        <div className="absolute inset-1/2 text-gray-100 text-xl">
-          Loading...
-        </div>
-      </div>
-    );
-
+const About = (props) => {
   return (
     <main className=" relative bg-gray-900 blur2 md:w-4/5 md:mx-auto">
-      <div className="p-5  lg:p-10  container mx-auto relative">
+      <div className="p-5  container mx-auto relative">
         <Fade>
           <h1 className="text-2xl sm:text-5xl flex justify-center lg:justify-start nameFont text-teal-100 mb-5">
             About
@@ -56,7 +31,7 @@ export default function About() {
                 {" "}
                 Hey there. I'm{" "}
                 <span className="text-teal-400">
-                  {author.name}
+                  {props.author.name}
                   {", "}
                 </span>
               </h1>
@@ -69,7 +44,7 @@ export default function About() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  {author.degree}
+                  {props.author.degree}
                 </a>{" "}
               </h2>
             </div>
@@ -77,7 +52,7 @@ export default function About() {
             <div className="text-lg inline-flex flex-col  lg:justify-between xl:flex-row items-center justify-center">
               <div className="prose prose lg:prose-lg inline-flex flex-col text-white items-center transition-all  duration-300">
                 <BlockContent
-                  blocks={author.bio}
+                  blocks={props.author.bio}
                   projectId="0rdpl6dw"
                   dataset="production"
                 />
@@ -85,9 +60,9 @@ export default function About() {
 
               <div className=" inline-flex flex-none  items-center justify-center m-5 ">
                 <img
-                  src={urlFor(author.authorImage).url()}
+                  src={urlFor(props.author.authorImage).url()}
                   className=" rounded max-h-80 border-solid border-teal-500 border-2 "
-                  alt={author.name}
+                  alt={props.author.name}
                 />
               </div>
             </div>
@@ -96,4 +71,5 @@ export default function About() {
       </div>
     </main>
   );
-}
+};
+export default About;

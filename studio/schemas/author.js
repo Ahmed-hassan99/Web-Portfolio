@@ -31,6 +31,11 @@ export default {
       },
     },
     {
+      name: "resume",
+      type: "file",
+      title: "Resume",
+    },
+    {
       name: "bio",
       title: "Bio",
       type: "array",

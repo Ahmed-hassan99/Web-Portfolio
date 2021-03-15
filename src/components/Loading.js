@@ -1,45 +1,57 @@
 import React from "react";
-import Home from "./Home.js";
-import About from "./About.js";
-import Project from "./Project.js";
-import Experience from "./Experience.js";
+import Main from "./Main";
+
 import Navbar from "./NavBar";
-import Contact from "./Contact.js";
-import Footer from "./Footer.js";
-import { Element } from "react-scroll";
 import sanityClient from "../client.js";
 import logo from "../Assets/AH-logo.png";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import SingleProject from "./SingleProject.js";
+import Resume from "./Resume.js";
 
 export default class Loading extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       done: undefined,
+      authorData: undefined,
       experienceData: undefined,
       projectData: undefined,
     };
   }
 
   componentDidMount() {
+    sanityClient
+      .fetch(
+        `*[_type == "author"]{
+          name, 
+          degree,
+          bio,
+          "authorImage": image.asset->url,
+          "authorResume": resume.asset->url
+        }`
+      )
+      .then((data) => {
+        this.setState({ authorData: data[0] });
+      });
     setTimeout(() => {
       //fetching experiences
       sanityClient
         .fetch(
-          `*[_type=="experience"]
-          {title,
-          _id,
-          slug,
-          mainImage{ 
-              asset->{
-                  _id,
-                  url
-                }
-            },
-          place,
-          jobDescription,
-          startDate,
-          endDate,
-          ended,
+          `*[_type=="experience"]{
+            title,
+            _id,
+            slug,
+            mainImage{ 
+                asset->{
+                    _id,
+                    url
+                  }
+              },
+            place,
+            jobDescription,
+            startDate,
+            endDate,
+            ended,
            }`
         )
         .then((data) => {
@@ -50,12 +62,15 @@ export default class Loading extends React.Component {
         .fetch(
           `*[_type == "project"]{ 
                 title,
+                slug,
                 date,
                 place,
                 description,
                 projectType,
                 link,
-                tags}`
+                gitLink,
+                tags
+              }`
         )
         .then((data) => {
           this.setState({ done: true, projectData: data });
@@ -75,31 +90,35 @@ export default class Loading extends React.Component {
             />
           </div>
         ) : (
-          <>
-            <div className="bg-gray-900">
-              <Navbar />
-              <Element id="Home-section" name="Home-section">
-                <Home />
-              </Element>
-
-              <Element id="about-section" name="about-section">
-                <About />
-              </Element>
-              <Element id="Experience-section" name="Experience-section">
-                <Experience experienceData={this.state.experienceData} />
-              </Element>
-              <Element id="Project-section" name="Project-section">
-                <Project projectData={this.state.projectData} />
-              </Element>
-              <Element id="Contact-section" name="Contact-section">
-                <Contact />
-              </Element>
-
-              <Element id="Footer-section" name="Footer-section">
-                <Footer />
-              </Element>
+          <BrowserRouter>
+            <div>
+              <Navbar resume={this.state.authorData.authorResume} />
+              {/* <div>
+                <a
+                  href={`${this.state.authorData.authorResume}`}
+                  target="_blank"
+                  rel="noopener"
+                >
+                  Resume
+                </a>
+              </div> */}
+              <Switch>
+                <Route
+                  path="/"
+                  exact
+                  render={(props) => (
+                    <Main
+                      experienceData={this.state.experienceData}
+                      authorData={this.state.authorData}
+                      projectData={this.state.projectData}
+                    />
+                  )}
+                />
+                <Route component={Resume} path="/Resume" />
+                <Route component={SingleProject} path="/:slug" />
+              </Switch>
             </div>
-          </>
+          </BrowserRouter>
         )}
       </div>
     );

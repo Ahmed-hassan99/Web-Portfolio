@@ -6,10 +6,10 @@ const email = "mailto:ahmed@ahmedahassan.com";
 
 export default function Contact() {
   return (
-    <main className=" bg-gray-900 bg-opacity-100 blur2 m-0 md:w-4/5 md:mx-auto">
+    <main className=" bg-gray-900 bg-opacity-100 blur2 m-0 py-5 md:w-4/5 md:mx-auto">
       <div className="  inset-y-1/4 inset-x-0 ">
         <Fade>
-          <section className="container relative  mx-auto  p-5 lg:p-10">
+          <section className="container relative  mx-auto  p-5 ">
             <h1 className="text-2xl sm:text-5xl flex justify-center  nameFont text-teal-100 mb-5">
               <div className="relative w-full ">
                 <div className="absolute w-full border-gray-500 border-t-2 inset-y-1/2 opacity-50"></div>

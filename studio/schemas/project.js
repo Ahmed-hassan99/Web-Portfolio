@@ -12,6 +12,15 @@ export default {
       type: "datetime",
     },
     {
+      name: "slug",
+      title: "Slug",
+      type: "slug",
+      options: {
+        source: "title",
+        maxLength: 96,
+      },
+    },
+    {
       name: "place",
       type: "string",
     },
@@ -32,7 +41,16 @@ export default {
       },
     },
     {
+      name: "projectDescription",
+      title: "Project Description",
+      type: "blockContent",
+    },
+    {
       name: "link",
+      type: "url",
+    },
+    {
+      name: "gitLink",
       type: "url",
     },
     {
@@ -48,4 +66,8 @@ export default {
       },
     },
   ],
+  initialValue: {
+    link: "#",
+    gitLink: "#",
+  },
 };

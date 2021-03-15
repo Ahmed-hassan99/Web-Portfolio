@@ -1,9 +1,8 @@
 import React, { Component } from "react";
 // react  reveal and scroll
-import Slide from "react-reveal/Slide";
-import { Link } from "react-scroll";
+import { NavHashLink } from "react-router-hash-link";
 //import images and pdf
-import resume from "../Assets/Resume_AhmedHassan.pdf";
+// import resume from "../Assets/Resume_AhmedHassan.pdf";
 import logo from "../Assets/AH-logo.png";
 
 const navButton =
@@ -68,11 +67,9 @@ class NavBar extends Component {
             transition: "transform 90ms linear",
           }}
         >
-          <Link
-            to="Home-section"
-            spy={true}
-            smooth={true}
-            duration={500}
+          <NavHashLink
+            smooth
+            to="/#Home-section"
             className="cursor-pointer"
             onClick={
               this.state.clicked ? this.handleClick : this.handleClickIcon
@@ -83,54 +80,48 @@ class NavBar extends Component {
               alt="logo"
               className="h-8 w-8 ml-10 my-3 float-left transition-all duration-300 hover:opacity-100 opacity-80 rounded"
             />
-          </Link>
+          </NavHashLink>
 
           <nav className="  p-0 justify-end items-center  flex-row mr-10 ml-10 hidden md:flex ">
-            <Link
-              to="Home-section"
-              spy={true}
-              smooth={true}
-              duration={500}
-              activeClass="text-teal-400  "
+            <NavHashLink
+              smooth
+              to="/#Home-section"
+              activeClassName="text-teal-400  "
               className="inline-flex items-center cursor-pointer transition-all duration-300 px-3  rounded text-teal-100 hover:text-teal-400 font-bold text-1xl"
             >
               Home
-            </Link>
+            </NavHashLink>
 
-            <Link
-              to="about-section"
-              spy={true}
-              smooth={true}
-              duration={500}
+            <NavHashLink
+              smooth
+              to="/#about-section"
               className="inline-flex items-center cursor-pointer transition-all  duration-300 py-3 px-3  rounded text-teal-100 hover:text-teal-400 font-bold text-1xl"
-              activeClass="text-teal-400 "
+              activeClassName="text-teal-400 "
             >
               About Me
-            </Link>
+            </NavHashLink>
 
-            <Link
-              to="Experience-section"
-              spy={true}
-              smooth={true}
-              duration={500}
-              activeClass="text-teal-400 "
+            <NavHashLink
+              smooth
+              to="/#Experience-section"
+              activeClassName="text-teal-400 "
               className="inline-flex items-center cursor-pointer transition-all  duration-300 py-3 px-3  rounded text-teal-100 hover:text-teal-400 font-bold text-1xl"
             >
               Experiences
-            </Link>
-            <Link
-              to="Project-section"
-              spy={true}
-              smooth={true}
-              duration={500}
-              activeClass="text-teal-400 "
+            </NavHashLink>
+
+            <NavHashLink
+              smooth
+              to="/#Project-section"
+              activeClassName="text-teal-400 "
               className="inline-flex items-center cursor-pointer transition-all  duration-300 py-3 px-3  rounded text-teal-100 hover:text-teal-400 font-bold text-1xl"
             >
               Projects
-            </Link>
+            </NavHashLink>
+
             <a
               className="transition-all inline-flex items-center  duration-300 justify-center rounded  py-1 px-3 ml-4 my-2 border-solid border-2 border-teal-500 text-teal-500 hover:bg-teal-500 hover:bg-opacity-30 font-bold hover:text-teal-400"
-              href={resume}
+              href={this.props.resume}
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -144,76 +135,67 @@ class NavBar extends Component {
             <i
               className={
                 this.state.clicked
-                  ? "fas fa-times text-3xl text-teal-500 opacity-80 hover:opacity-100"
-                  : "fas fa-bars text-3xl text-teal-500 opacity-80 hover:opacity-100"
+                  ? "fas fa-times text-3xl text-teal-500 opacity-80 hover:opacity-100 "
+                  : "fas fa-bars text-3xl text-teal-500 opacity-80 hover:opacity-100 "
               }
             ></i>
           </button>
         </div>
-        <Slide right when={this.state.clicked}>
-          <div
-            className={
-              this.state.clicked
-                ? "mx-auto flex flex-col sm:flex-row justify-between justify-center fixed top-0 w-full h-full md:hidden z-40 blur"
-                : "mx-auto flex flex-col sm:flex-row justify-between justify-center fixed top-0 w-full h-full md:hidden z-0 "
-            }
-          >
-            <nav className="flex inline-flex justify-center items-center flex-col  w-full h-full  bg-gray-900 opacity-90">
-              <Link
-                to="Home-section"
-                spy={true}
-                smooth={true}
-                duration={500}
-                activeClass="text-teal-400 bg-teal-100"
-                className={navButton}
-                onClick={this.handleClick}
-              >
-                Home
-              </Link>
-              <Link
-                to="about-section"
-                spy={true}
-                smooth={true}
-                duration={500}
-                activeClass="text-teal-400  bg-teal-100"
-                className={navButton}
-                onClick={this.handleClick}
-              >
-                About Me
-              </Link>
-              <Link
-                to="Experience-section"
-                spy={true}
-                smooth={true}
-                duration={500}
-                activeClass="text-teal-400  bg-teal-100"
-                className={navButton}
-                onClick={this.handleClick}
-              >
-                Experiences
-              </Link>
-              <Link
-                to="Project-section"
-                spy={true}
-                smooth={true}
-                duration={500}
-                activeClass="text-teal-400 bg-teal-100"
-                className={navButton}
-                onClick={this.handleClick}
-              >
-                Projects
-              </Link>
-              <a
-                className=" inline-flextransition-all duration-300 justify-center rounded  py-1 px-3 mx-auto my-4 border-solid border-2 border-teal-500 text-teal-500 hover:bg-teal-500 hover:bg-opacity-20 text-xl"
-                href={resume}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Resume
-              </a>
-            </nav>
-          </div>
-        </Slide>
+
+        <div
+          className={
+            this.state.clicked
+              ? "mx-auto flex flex-col sm:flex-row justify-between justify-center fixed top-0 w-full h-full md:hidden z-40 blur"
+              : "mx-auto flex flex-col sm:flex-row justify-between justify-center fixed top-0 w-full h-full hidden  "
+          }
+        >
+          <nav className="flex inline-flex justify-center items-center flex-col  w-full h-full  bg-gray-900 opacity-90">
+            <NavHashLink
+              smooth
+              to="/#Home-section"
+              activeClassName="text-teal-400 bg-teal-100"
+              className={navButton}
+              onClick={this.handleClick}
+            >
+              Home
+            </NavHashLink>
+            <NavHashLink
+              smooth
+              to="/#about-section"
+              activeClassName="text-teal-400  bg-teal-100"
+              className={navButton}
+              onClick={this.handleClick}
+            >
+              About Me
+            </NavHashLink>
+            <NavHashLink
+              smooth
+              to="/#Experience-section"
+              activeClassName="text-teal-400  bg-teal-100"
+              className={navButton}
+              onClick={this.handleClick}
+            >
+              Experiences
+            </NavHashLink>
+            <NavHashLink
+              smooth
+              to="/#Project-section"
+              activeClassName="text-teal-400 bg-teal-100"
+              className={navButton}
+              onClick={this.handleClick}
+            >
+              Projects
+            </NavHashLink>
+            <a
+              className=" inline-flextransition-all duration-300 justify-center rounded  py-1 px-3 mx-auto my-4 border-solid border-2 border-teal-500 text-teal-500 hover:bg-teal-500 hover:bg-opacity-20 text-xl"
+              href={this.props.resume}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Resume
+            </a>
+          </nav>
+        </div>
       </header>
     );
   }
