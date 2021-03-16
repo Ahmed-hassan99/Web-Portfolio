@@ -6,8 +6,8 @@ const Resume = (props) => {
   const size = useWindowSize();
 
   return (
-    <main className=" bg-gray-900  m-0 md:mx-auto min-h-screen">
-      <div className="mx-auto  flex flex-col justify-center pt-20 ">
+    <main className=" bg-gray-900  m-0 md:mx-auto ">
+      <div className="mx-auto  flex flex-col justify-center items-center min-h-screen">
         <div className="  flex justify-center">
           <Document
             file={props.resume}
