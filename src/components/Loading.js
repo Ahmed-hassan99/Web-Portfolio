@@ -6,6 +6,8 @@ import sanityClient from "../client.js";
 import logo from "../Assets/AH-logo.png";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import SingleProject from "./SingleProject.js";
+
+import Footer from "./Footer.js";
 import Resume from "./Resume.js";
 
 export default class Loading extends React.Component {
@@ -91,7 +93,7 @@ export default class Loading extends React.Component {
           </div>
         ) : (
           <BrowserRouter>
-            <div>
+            <div className="bg-gray-900">
               <Navbar resume={this.state.authorData.authorResume} />
 
               <Switch>
@@ -107,9 +109,15 @@ export default class Loading extends React.Component {
                     />
                   )}
                 />
-                <Route component={Resume} path="/Resume" />
+                <Route
+                  path="/Resume"
+                  render={(props) => (
+                    <Resume resume={this.state.authorData.authorResume} />
+                  )}
+                />
                 <Route component={SingleProject} path="/:slug" />
               </Switch>
+              <Footer />
             </div>
           </BrowserRouter>
         )}

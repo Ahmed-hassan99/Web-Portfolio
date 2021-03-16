@@ -4,7 +4,6 @@ import About from "./About.js";
 import Project from "./Project.js";
 import Experience from "./Experience.js";
 import Contact from "./Contact.js";
-import Footer from "./Footer.js";
 import { Element } from "react-scroll";
 
 const Main = (props) => {
@@ -28,10 +27,6 @@ const Main = (props) => {
 
         <Element id="Contact-section" name="Contact-section">
           <Contact />
-        </Element>
-
-        <Element id="Footer-section" name="Footer-section">
-          <Footer />
         </Element>
       </div>
     </>

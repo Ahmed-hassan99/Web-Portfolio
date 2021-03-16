@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 // react  reveal and scroll
 import { HashLink } from "react-router-hash-link";
+
+import { Link } from "react-router-dom";
 //import images and pdf
 // import resume from "../Assets/Resume_AhmedHassan.pdf";
 import logo from "../Assets/AH-logo.png";
@@ -119,14 +121,12 @@ class NavBar extends Component {
               Projects
             </HashLink>
 
-            <a
+            <Link
               className="transition-all inline-flex items-center  duration-300 justify-center rounded  py-1 px-3 ml-4 my-2 border-solid border-2 border-teal-500 text-teal-500 hover:bg-teal-500 hover:bg-opacity-30 font-bold hover:text-teal-400"
-              href={this.props.resume}
-              target="_blank"
-              rel="noopener noreferrer"
+              to="/resume"
             >
               Resume
-            </a>
+            </Link>
           </nav>
           <button
             className=" p-0 float-right transition-all duration-300 items-center mr-10 my-3  md:hidden cursor-pointer z-50 "
@@ -186,14 +186,12 @@ class NavBar extends Component {
             >
               Projects
             </HashLink>
-            <a
-              className=" inline-flextransition-all duration-300 justify-center rounded  py-1 px-3 mx-auto my-4 border-solid border-2 border-teal-500 text-teal-500 hover:bg-teal-500 hover:bg-opacity-20 text-xl"
-              href={this.props.resume}
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              className=" inline-flex transition-all duration-300 justify-center rounded  py-1 px-3 mx-auto my-4 border-solid border-2 border-teal-500 text-teal-500 hover:bg-teal-500 hover:bg-opacity-20 text-xl"
+              to="/resume"
             >
               Resume
-            </a>
+            </Link>
           </nav>
         </div>
       </header>

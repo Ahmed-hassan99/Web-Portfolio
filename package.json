@@ -16,6 +16,7 @@
     "@types/react-transition-group": "^4.4.0",
     "autoprefixer": "^9.8.6",
     "bootstrap": "^4.5.3",
+    "pdf-viewer-reactjs": "^2.2.3",
     "postcss": "^7.0.35",
     "react": "^17.0.1",
     "react-animate-on-scroll": "^2.1.5",
