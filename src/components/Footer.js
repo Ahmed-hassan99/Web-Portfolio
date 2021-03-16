@@ -7,7 +7,7 @@ const email = "mailto:ahmed@ahmedahassan.com";
 export default function Contact() {
   return (
     <main className=" bg-teal-900 bg-opacity-50 blur2 m-0 md:w-full md:mx-auto">
-      <footer className="mx-auto  flex flex-col justify-center  mt-5 pt-5 pb-8 bg-gray-800 bg-opacity-25 ">
+      <footer className="mx-auto  flex flex-col justify-center  md:mt-5 pt-5 pb-8 bg-gray-800 bg-opacity-25 ">
         <div className=" inline-flex flex  py-1 px-4 my-1 justify-center ">
           <SocialIcon
             url="https://github.com/Ahmed-hassan99"

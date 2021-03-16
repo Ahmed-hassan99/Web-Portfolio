@@ -133,6 +133,11 @@ module.exports = {
                 textDecoration: "underline",
               },
             },
+            h3: {
+              color: theme("colors.teal.600"),
+              textDecoration: "none",
+              fontWeight: "normal",
+            },
           },
         },
       }),

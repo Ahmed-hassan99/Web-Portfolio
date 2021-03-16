@@ -4,6 +4,7 @@ import { SocialIcon } from "react-social-icons";
 import Fade from "react-reveal/Fade";
 //import images and pdf
 import image from "../Assets/Biomedical-Eng-background1.jpg";
+import { Link } from "react-router-dom";
 const email = "mailto:ahmed@ahmedahassan.com";
 
 const Home = (props) => {
@@ -78,14 +79,12 @@ const Home = (props) => {
                 Get in touch
               </a>
 
-              <a
+              <Link
                 className="transition-all  duration-300 justify-center font-bold  rounded flex inline-flex mx-auto md:mx-2 py-3 px-3 my-2 border-solid border-2 border-teal-500  hover:bg-teal-500 hover:bg-opacity-20 "
-                href={props.resume}
-                target="_blank"
-                rel="noopener noreferrer"
+                to="/resume"
               >
                 Resume
-              </a>
+              </Link>
             </section>
           </div>
         </Fade>

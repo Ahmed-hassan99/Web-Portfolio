@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import sanityClient from "../client.js";
-// import BlockContent from "@sanity/block-content-to-react";
+import BlockContent from "@sanity/block-content-to-react";
 // import imageUrlBuilder from "@sanity/image-url";
 
 // const builder = imageUrlBuilder(sanityClient);
@@ -22,6 +22,8 @@ export default function SingleProject() {
             place,
             description,
             projectType,
+            projectDescription,
+            comingSoon,
             link,
             tags
           }`
@@ -30,40 +32,55 @@ export default function SingleProject() {
       .catch(console.error);
   }, [slug]);
 
-  //   if (!projectData)
-  return (
-    <div className="bg-gray-900 h-screen flex justify-center items-center text-gray-400">
-      Coming Soon...
-    </div>
-  );
-  // eslint-disable-next-line
-  return (
-    <div className="bg-gray-900 min-h-screen p-12">
-      <div className="container shadow-lg mx-auto bg-green-100 rounded-lg">
-        <div className="relative">
-          <div className="absolute h-full w-full flex items-center justify-center p-8">
-            {/* Title Section */}
-            <div className="bg-white bg-opacity-75 rounded p-12">
-              <h2 className="cursive text-3xl lg:text-6xl mb-4">
+  if (!projectData)
+    return (
+      <div className="bg-gray-900 h-screen flex justify-center items-center text-gray-400">
+        Loading...<i class="fas fa-spinner animate-spin"></i>
+      </div>
+    );
+
+  if (projectData.comingSoon)
+    return (
+      <div className="bg-gray-900 h-screen flex justify-center items-center text-gray-400">
+        Coming Soon...🚧
+      </div>
+    );
+  else
+    return (
+      <main className="bg-gray-900 bg-opacity-100  blur2  md:w-4/5 md:mx-auto">
+        <div className="bg-gray-900 min-h-screen  pt-20">
+          <div className="container shadow-lg  bg-blue-900 bg-opacity-20 rounded-lg">
+            <div className="  justify-start p-8">
+              <h2 className=" text-teal-400 text-3xl lg:text-6xl mb-4 uppercase">
                 {projectData.title}
               </h2>
+
+              <div>
+                <h3 className=" text-teal-600 text-2xl lg:text-4xl my-4">
+                  Overview:
+                </h3>
+                <p className="mb-5 text-sm sm:text-base md:text-lg text-gray-300 leading-relaxed ">
+                  {projectData.description}
+                </p>
+              </div>
+
+              <div className="prose prose lg:prose-lg  text-gray-300 max-w-full">
+                <BlockContent
+                  blocks={projectData.projectDescription}
+                  projectId="0rdpl6dw"
+                  dataset="production"
+                />
+              </div>
+              {/* <div className="px-16 lg:px-48 py-12 lg:py-20 prose lg:prose-xl max-w-full ">
+            <BlockContent
+              blocks={projectData.description}
+              projectId={sanityClient.clientConfig.projectId}
+              dataset={sanityClient.clientConfig.dataset}
+            />
+          </div> */}
             </div>
           </div>
-          {/* <img
-            className="w-full object-cover rounded-t"
-            src={urlFor(projectData.mainImage).url()}
-            alt=""
-            style={{ height: "400px" }}
-          /> */}
         </div>
-        <div className="px-16 lg:px-48 py-12 lg:py-20 prose lg:prose-xl max-w-full ">
-          {/* <BlockContent
-            blocks={projectData.body}
-            projectId={sanityClient.clientConfig.projectId}
-            dataset={sanityClient.clientConfig.dataset}
-          /> */}
-        </div>
-      </div>
-    </div>
-  );
+      </main>
+    );
 }

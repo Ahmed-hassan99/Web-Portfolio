@@ -45,6 +45,12 @@ export default {
       title: "Project Description",
       type: "blockContent",
     },
+
+    {
+      name: "comingSoon",
+      title: "Coming Soon ?",
+      type: "boolean",
+    },
     {
       name: "link",
       type: "url",

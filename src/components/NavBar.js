@@ -189,6 +189,7 @@ class NavBar extends Component {
             <Link
               className=" inline-flex transition-all duration-300 justify-center rounded  py-1 px-3 mx-auto my-4 border-solid border-2 border-teal-500 text-teal-500 hover:bg-teal-500 hover:bg-opacity-20 text-xl"
               to="/resume"
+              onClick={this.handleClick}
             >
               Resume
             </Link>
