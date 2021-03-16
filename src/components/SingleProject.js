@@ -2,12 +2,12 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import sanityClient from "../client.js";
 import BlockContent from "@sanity/block-content-to-react";
-// import imageUrlBuilder from "@sanity/image-url";
+import imageUrlBuilder from "@sanity/image-url";
 
-// const builder = imageUrlBuilder(sanityClient);
-// function urlFor(source) {
-//   return builder.image(source);
-// }
+const builder = imageUrlBuilder(sanityClient);
+function urlFor(source) {
+  return builder.image(source);
+}
 
 export default function SingleProject() {
   const [projectData, setProjectData] = useState(null);
@@ -22,6 +22,12 @@ export default function SingleProject() {
             place,
             description,
             projectType,
+            logoImage{ 
+              asset->{
+                  _id,
+                  url
+                }
+            },
             projectDescription,
             comingSoon,
             link,
@@ -52,7 +58,14 @@ export default function SingleProject() {
           <div className="container shadow-lg  bg-blue-900 bg-opacity-20 rounded-lg">
             <div className="  justify-start p-8">
               <h2 className=" text-teal-400 text-3xl lg:text-6xl mb-4 uppercase">
-                {projectData.title}
+                {!projectData.logoImage && projectData.title}
+                {projectData.logoImage && (
+                  <img
+                    src={urlFor(projectData.logoImage).url()}
+                    className=" rounded w-72 md:w-96 "
+                    alt={projectData.title}
+                  />
+                )}
               </h2>
 
               <div>

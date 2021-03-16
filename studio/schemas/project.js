@@ -41,6 +41,14 @@ export default {
       },
     },
     {
+      name: "logoImage",
+      title: "Logo",
+      type: "image",
+      options: {
+        hotspot: true,
+      },
+    },
+    {
       name: "projectDescription",
       title: "Project Description",
       type: "blockContent",
