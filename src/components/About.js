@@ -24,32 +24,9 @@ const About = (props) => {
           </h1>
         </Fade>
         <Fade>
-          <section className="bg-teal-800 rounded-lg shadow-2xl flex flex-col p-4 sm:p-6 md:p-8 lg:p-10 ">
-            <div>
-              <h1 className="nameFont inline text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl text-teal-100   ">
-                {" "}
-                Hey there. I'm{" "}
-                <span className="text-teal-400">
-                  {props.author.name}
-                  {", "}
-                </span>
-              </h1>
-              <h2 className="inline text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl text-teal-100 ">
-                {" "}
-                an{" "}
-                <a
-                  href="https://www.eng.mcmaster.ca/ibiomed/programs/degree-options/bengbme/electrical-and-biomedical-engineering"
-                  className="capitalize text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl text-teal-400 hover:underline"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {props.author.degree}
-                </a>{" "}
-              </h2>
-            </div>
-
-            <div className="text-lg inline-flex flex-col  lg:justify-between xl:flex-row items-center justify-center">
-              <div className="prose prose lg:prose-lg inline-flex flex-col text-white items-center transition-all  duration-300">
+          <section className="bg-teal-800 bg-opacity-75 rounded-lg shadow-2xl flex flex-col p-4 lg:px-10 ">
+            <div className=" inline-flex flex-col  lg:justify-between xl:flex-row items-center justify-center">
+              <div className="prose md:prose-lg lg:prose-xl inline-flex flex-col text-white items-center transition-all text-center md:text-left duration-300">
                 <BlockContent
                   blocks={props.author.bio}
                   projectId="0rdpl6dw"
@@ -60,7 +37,7 @@ const About = (props) => {
               <div className=" inline-flex flex-none  items-center justify-center m-5 ">
                 <img
                   src={urlFor(props.author.authorImage).url()}
-                  className=" rounded max-h-80 border-solid border-teal-500 border-2 "
+                  className=" rounded max-h-96 border-solid border-teal-500 border-2 "
                   alt={props.author.name}
                 />
               </div>
