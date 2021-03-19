@@ -37,6 +37,9 @@ export default function SingleProject() {
       .then((data) => setProjectData(data[0]))
       .catch(console.error);
   }, [slug]);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   if (!projectData)
     return (

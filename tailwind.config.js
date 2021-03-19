@@ -143,6 +143,15 @@ module.exports = {
                 "&:before": {
                   backgroundColor: theme("colors.teal.600"),
                 },
+                ul: {
+                  li: {
+                    "&:before": {
+                      borderColor: theme("colors.teal.600"),
+                      borderWidth: "thin",
+                      backgroundColor: "transparent",
+                    },
+                  },
+                },
               },
             },
           },
