@@ -25,8 +25,8 @@ const About = (props) => {
         </Fade>
         <Fade>
           <section className="bg-teal-800 bg-opacity-75 rounded-lg shadow-2xl flex flex-col p-4 lg:px-10 ">
-            <div className=" inline-flex flex-col  lg:justify-between xl:flex-row items-center justify-center">
-              <div className="prose md:prose-lg lg:prose-xl inline-flex flex-col text-white items-center transition-all text-center md:text-left duration-300">
+            <div className=" inline-flex flex-col  lg:justify-between xl:flex-row items-center justify-center transition-all duration-300">
+              <div className="prose md:prose-lg lg:prose-xl inline-flex flex-col text-white items-center  text-center md:text-left ">
                 <BlockContent
                   blocks={props.author.bio}
                   projectId="0rdpl6dw"

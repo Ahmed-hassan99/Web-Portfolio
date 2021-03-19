@@ -1,13 +1,24 @@
 //import react libraries
-import React from "react";
+import React, { useEffect } from "react";
 import { SocialIcon } from "react-social-icons";
 import Fade from "react-reveal/Fade";
 //import images and pdf
 import image from "../Assets/Biomedical-Eng-background1.jpg";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 const email = "mailto:ahmed@ahmedahassan.com";
 
 const Home = (props) => {
+  const location = useLocation();
+  useEffect(() => {
+    if (location.hash) {
+      let elem = document.getElementById(location.hash.slice(1));
+      if (elem) {
+        elem.scrollIntoView({ behavior: "smooth" });
+      }
+    } else {
+      window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+    }
+  }, [location]);
   return (
     <main className="relative h-screen bg-gray-900">
       <img

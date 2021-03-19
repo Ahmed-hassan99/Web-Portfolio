@@ -138,6 +138,14 @@ module.exports = {
               textDecoration: "none",
               fontWeight: "normal",
             },
+            ul: {
+              li: {
+                "&:before": {
+                  backgroundColor: theme("colors.teal.600"),
+                  opacity: "75%",
+                },
+              },
+            },
           },
         },
       }),

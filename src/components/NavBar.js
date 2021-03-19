@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 // react  reveal and scroll
-import { HashLink } from "react-router-hash-link";
-
+// import { LinkScroll } from "react-router-hash-LinkScroll";
+// import { Link as LinkScroll } from "react-scroll";
 import { Link } from "react-router-dom";
 //import images and pdf
 // import resume from "../Assets/Resume_AhmedHassan.pdf";
@@ -69,8 +69,7 @@ class NavBar extends Component {
             transition: "transform 90ms linear",
           }}
         >
-          <HashLink
-            smooth
+          <Link
             to="/#Home-section"
             className="cursor-pointer"
             onClick={
@@ -82,44 +81,40 @@ class NavBar extends Component {
               alt="logo"
               className="h-8 w-8 ml-10 my-3 float-left transition-all duration-300 hover:opacity-100 opacity-80 rounded"
             />
-          </HashLink>
+          </Link>
 
           <nav className="  p-0 justify-end items-center  flex-row mr-10 ml-10 hidden md:flex ">
-            <HashLink
-              smooth
+            <Link
               to="/#Home-section"
-              activeClassName="text-teal-400  "
+              activeClass="text-teal-400  "
               className="inline-flex items-center cursor-pointer transition-all duration-300 px-3  rounded text-teal-100 hover:text-teal-400 font-bold text-1xl"
             >
               Home
-            </HashLink>
+            </Link>
 
-            <HashLink
-              smooth
+            <Link
               to="/#about-section"
               className="inline-flex items-center cursor-pointer transition-all  duration-300 py-3 px-3  rounded text-teal-100 hover:text-teal-400 font-bold text-1xl"
-              activeClassName="text-teal-400 "
+              activeClass="text-teal-400 "
             >
               About Me
-            </HashLink>
+            </Link>
 
-            <HashLink
-              smooth
+            <Link
               to="/#Experience-section"
-              activeClassName="text-teal-400 "
+              activeClass="text-teal-400 "
               className="inline-flex items-center cursor-pointer transition-all  duration-300 py-3 px-3  rounded text-teal-100 hover:text-teal-400 font-bold text-1xl"
             >
               Experiences
-            </HashLink>
+            </Link>
 
-            <HashLink
-              smooth
+            <Link
               to="/#Project-section"
-              activeClassName="text-teal-400 "
+              activeClass="text-teal-400 "
               className="inline-flex items-center cursor-pointer transition-all  duration-300 py-3 px-3  rounded text-teal-100 hover:text-teal-400 font-bold text-1xl"
             >
               Projects
-            </HashLink>
+            </Link>
 
             <Link
               className="transition-all inline-flex items-center  duration-300 justify-center rounded  py-1 px-3 ml-4 my-2 border-solid border-2 border-teal-500 text-teal-500 hover:bg-teal-500 hover:bg-opacity-30 font-bold hover:text-teal-400"
@@ -150,42 +145,38 @@ class NavBar extends Component {
           }
         >
           <nav className="flex inline-flex justify-center items-center flex-col  w-full h-full  bg-gray-900 opacity-90">
-            <HashLink
-              smooth
+            <Link
               to="/#Home-section"
-              activeClassName="text-teal-400 bg-teal-100"
+              activeClass="text-teal-400 bg-teal-100"
               className={navButton}
               onClick={this.handleClick}
             >
               Home
-            </HashLink>
-            <HashLink
-              smooth
+            </Link>
+            <Link
               to="/#about-section"
-              activeClassName="text-teal-400  bg-teal-100"
+              activeClass="text-teal-400  bg-teal-100"
               className={navButton}
               onClick={this.handleClick}
             >
               About Me
-            </HashLink>
-            <HashLink
-              smooth
+            </Link>
+            <Link
               to="/#Experience-section"
-              activeClassName="text-teal-400  bg-teal-100"
+              activeClass="text-teal-400  bg-teal-100"
               className={navButton}
               onClick={this.handleClick}
             >
               Experiences
-            </HashLink>
-            <HashLink
-              smooth
+            </Link>
+            <Link
               to="/#Project-section"
-              activeClassName="text-teal-400 bg-teal-100"
+              activeClass="text-teal-400 bg-teal-100"
               className={navButton}
               onClick={this.handleClick}
             >
               Projects
-            </HashLink>
+            </Link>
             <Link
               className=" inline-flex transition-all duration-300 justify-center rounded  py-1 px-3 mx-auto my-4 border-solid border-2 border-teal-500 text-teal-500 hover:bg-teal-500 hover:bg-opacity-20 text-xl"
               to="/resume"
