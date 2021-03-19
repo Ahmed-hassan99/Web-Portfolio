@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from "react";
-// using ES6 modules
-import "react-pdf/dist/esm/Page/AnnotationLayer.css";
-
-// using CommonJS modules
-import "react-pdf/dist/umd/Page/AnnotationLayer.css";
+import "react-pdf/dist/esm/Page/AnnotationLayer.css"; // using ES6 modules
 import { Document, Page, pdfjs } from "react-pdf";
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
 
 const Resume = (props) => {
   const size = useWindowSize();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <main className=" bg-gray-900  m-0 md:mx-auto ">

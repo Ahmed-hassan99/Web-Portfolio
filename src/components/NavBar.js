@@ -1,10 +1,5 @@
 import React, { Component } from "react";
-// react  reveal and scroll
-// import { LinkScroll } from "react-router-hash-LinkScroll";
-// import { Link as LinkScroll } from "react-scroll";
 import { Link } from "react-router-dom";
-//import images and pdf
-// import resume from "../Assets/Resume_AhmedHassan.pdf";
 import logo from "../Assets/AH-logo.png";
 
 const navButton =
@@ -93,7 +88,7 @@ class NavBar extends Component {
             </Link>
 
             <Link
-              to="/#about-section"
+              to="/#About-section"
               className="inline-flex items-center cursor-pointer transition-all  duration-300 py-3 px-3  rounded text-teal-100 hover:text-teal-400 font-bold text-1xl"
               activeClass="text-teal-400 "
             >
@@ -154,7 +149,7 @@ class NavBar extends Component {
               Home
             </Link>
             <Link
-              to="/#about-section"
+              to="/#About-section"
               activeClass="text-teal-400  bg-teal-100"
               className={navButton}
               onClick={this.handleClick}

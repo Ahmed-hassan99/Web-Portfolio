@@ -30,21 +30,20 @@ html {
 a[href="#"] {
   display: none;
 }
-
-/* ::-webkit-scrollbar {
+/* 
+::-webkit-scrollbar {
   width: 4px;
   height: 4px;
   cursor: pointer;
-  /* background-color: rgba(229, 231, 235, var(--bg-opacity)); } */
-/* ::-webkit-scrollbar-track {
+  background-color: rgba(229, 231, 235, var(--bg-opacity));
+}
+::-webkit-scrollbar-track {
   background-color: #2d3748;
   cursor: pointer;
-  /*background: red;
 }
 ::-webkit-scrollbar-thumb {
   cursor: pointer;
   background-color: #38b2ac;
-  border-radius: 80%;
-  
-  /* outline: 1px solid slategrey; 
+  border-radius: 50%;
+  outline: 1px solid slategrey;
 } */

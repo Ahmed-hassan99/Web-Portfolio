@@ -1,12 +1,11 @@
 import React from "react";
-import Main from "./Main";
-
-import Navbar from "./NavBar";
 import sanityClient from "../client.js";
 import logo from "../Assets/AH-logo.png";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
+//importing components
+import Navbar from "./NavBar";
+import Main from "./Main.js";
 import SingleProject from "./SingleProject.js";
-
 import Footer from "./Footer.js";
 import Resume from "./Resume.js";
 

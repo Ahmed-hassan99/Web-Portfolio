@@ -37,6 +37,7 @@ export default function SingleProject() {
       .then((data) => setProjectData(data[0]))
       .catch(console.error);
   }, [slug]);
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -87,13 +88,6 @@ export default function SingleProject() {
                   dataset="production"
                 />
               </div>
-              {/* <div className="px-16 lg:px-48 py-12 lg:py-20 prose lg:prose-xl max-w-full ">
-            <BlockContent
-              blocks={projectData.description}
-              projectId={sanityClient.clientConfig.projectId}
-              dataset={sanityClient.clientConfig.dataset}
-            />
-          </div> */}
             </div>
           </div>
         </div>

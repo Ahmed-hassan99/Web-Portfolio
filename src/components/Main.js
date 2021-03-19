@@ -4,30 +4,29 @@ import About from "./About.js";
 import Project from "./Project.js";
 import Experience from "./Experience.js";
 import Contact from "./Contact.js";
-import { Element } from "react-scroll";
 
 const Main = (props) => {
   return (
     <>
       <div className="bg-gray-900">
-        <Element id="Home-section" name="Home-section">
+        <div id="Home-section">
           <Home resume={props.resume} />
-        </Element>
+        </div>
 
-        <Element id="about-section" name="about-section">
+        <div id="About-section">
           <About author={props.authorData} />
-        </Element>
-        <Element id="Experience-section" name="Experience-section">
+        </div>
+        <div id="Experience-section">
           <Experience experienceData={props.experienceData} />
-        </Element>
+        </div>
 
-        <Element id="Project-section" name="Project-section">
+        <div id="Project-section">
           <Project projectData={props.projectData} />
-        </Element>
+        </div>
 
-        <Element id="Contact-section" name="Contact-section">
+        <div id="Contact-section">
           <Contact />
-        </Element>
+        </div>
       </div>
     </>
   );

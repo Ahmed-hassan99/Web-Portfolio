@@ -2,7 +2,6 @@ import React from "react";
 import BlockContent from "@sanity/block-content-to-react";
 
 const SingleExperience = (props) => {
-  // const Today = new Date();
   const experienceEndDate = new Date(props.singleExperience.endDate);
 
   return (

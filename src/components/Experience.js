@@ -1,10 +1,7 @@
 import React, { useState } from "react";
-
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
-
-import SingleExperience from "./SingleExperience.js";
-
 import Fade from "react-reveal/Fade";
+import SingleExperience from "./SingleExperience.js";
 
 const Experience = (props) => {
   const [tabIndex, setTabIndex] = useState(0);
@@ -21,8 +18,6 @@ const Experience = (props) => {
               <div className="absolute w-full border-gray-500 border-t-2 inset-y-1/2 opacity-50"></div>
             </div>
           </h1>
-
-          {/* <BrowserRouter> */}
           <Tabs
             selectedIndex={tabIndex}
             onSelect={(index) => setTabIndex(index)}
