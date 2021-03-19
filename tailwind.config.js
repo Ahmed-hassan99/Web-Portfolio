@@ -142,7 +142,6 @@ module.exports = {
               li: {
                 "&:before": {
                   backgroundColor: theme("colors.teal.600"),
-                  opacity: "75%",
                 },
               },
             },
