@@ -15,6 +15,10 @@ html {
   backdrop-filter: blur(6px);
 }
 
+.noblur {
+  backdrop-filter: blur(0px);
+}
+
 .blur2 {
   backdrop-filter: blur(10px);
 }

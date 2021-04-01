@@ -24,7 +24,7 @@ const About = (props) => {
           </h1>
         </Fade>
         <Fade>
-          <section className="bg-teal-800 bg-opacity-75 rounded-lg shadow-2xl flex flex-col p-4 lg:px-10 ">
+          <section className="bg-teal-800 bg-opacity-50 rounded-lg shadow-xl flex flex-col p-4 lg:px-10 ">
             <div className=" inline-flex flex-col  lg:justify-between xl:flex-row items-center justify-center transition-all duration-300">
               <div className="prose md:prose-lg lg:prose-xl inline-flex flex-col text-white items-center  text-center md:text-left ">
                 <BlockContent
@@ -34,7 +34,7 @@ const About = (props) => {
                 />
               </div>
 
-              <div className=" inline-flex flex-none  items-center justify-center m-5 ">
+              <div className=" inline-flex flex-none  items-center justify-center m-5 shadow-inner shadow-xl">
                 <img
                   src={urlFor(props.author.authorImage).url()}
                   className=" rounded max-h-96 border-solid border-teal-500 border-2 "
