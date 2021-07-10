@@ -3,7 +3,7 @@ import React, { useEffect } from "react";
 import { SocialIcon } from "react-social-icons";
 import Fade from "react-reveal/Fade";
 //import images and pdf
-import image from "../Assets/Biomedical-Eng-background1.jpg";
+import image from "../Assets/tealBackground2.jpg";
 import { Link, useLocation } from "react-router-dom";
 const email = "mailto:ahmed@ahmedahassan.com";
 

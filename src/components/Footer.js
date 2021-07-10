@@ -11,11 +11,11 @@ export default function Contact() {
         <div className=" inline-flex flex  py-1 px-4 my-1 justify-center ">
           <SocialIcon
             url="https://github.com/Ahmed-hassan99"
-            className="mr-4 rounded-full  transition-all  duration-300 hover:bg-gray-900"
+            className="ml-8 mr-4 rounded-full  transition-all  duration-300 hover:bg-gray-900"
             target="_blank"
             fgColor="#cbd5e0"
             bgColor="#ffffff00"
-            style={{ height: 40, width: 40 }}
+            style={{ height: 35, width: 35 }}
           />
 
           <SocialIcon
@@ -24,7 +24,7 @@ export default function Contact() {
             target="_blank"
             fgColor="#cbd5e0"
             bgColor="#ffffff00"
-            style={{ height: 40, width: 40 }}
+            style={{ height: 35, width: 35 }}
           />
 
           <SocialIcon
@@ -33,16 +33,16 @@ export default function Contact() {
             target="_blank"
             fgColor="#cbd5e0"
             bgColor="#ffffff00"
-            style={{ height: 40, width: 40 }}
+            style={{ height: 35, width: 35 }}
           />
 
           <SocialIcon
             url="https://twitter.com/Ahmeddodo99_"
-            className="mr-4 rounded-full  transition-all  duration-300 hover:bg-gray-900"
+            className="mr-8 rounded-full  transition-all  duration-300 hover:bg-gray-900"
             target="_blank"
             fgColor="#cbd5e0"
             bgColor="#ffffff00"
-            style={{ height: 40, width: 40 }}
+            style={{ height: 35, width: 35 }}
           />
         </div>
 
