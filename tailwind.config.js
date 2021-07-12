@@ -138,6 +138,18 @@ module.exports = {
               textDecoration: "none",
               fontWeight: "normal",
             },
+            h4: {
+              color: theme("colors.teal.400"),
+              textDecoration: "none",
+              fontWeight: "bold",
+            },
+            blockquote: {
+              color: theme("colors.gray.500"),
+              textDecoration: "none",
+              fontWeight: "normal",
+              fontSize: "inherit",
+              borderWidth: "0",
+            },
             ul: {
               li: {
                 "&:before": {

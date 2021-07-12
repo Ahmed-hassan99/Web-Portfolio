@@ -35,7 +35,7 @@ const Home = (props) => {
                 Ahmed
                 <strong className="text-teal-500 font-bold pl-2">Hassan</strong>
               </h1>
-              <h2 className="transition-all  duration-300 inline-flex justify-center text-center md:text-left lg:justify-start p-1 text-lg bg-gray-900 bg-opacity-30  md:text-xl sm:pt-30 lg:text-2xl text-gray-200  opacity-75 leading-none lg:leading-snug mt-4 z-30">
+              <h2 className="transition-all  duration-300 inline-flex justify-center text-center md:text-left lg:justify-start p-1 text-lg bg-gray-900 bg-opacity-40  md:text-xl sm:pt-30 lg:text-2xl text-gray-200  opacity-75 leading-none lg:leading-snug mt-4 z-30">
                 Engineer, Web developer, Designer, Programmer
               </h2>
             </section>
